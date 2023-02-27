@@ -2,6 +2,18 @@
 <!-- GETTING STARTED -->
 ## Getting Started
 
+
+### Resources:
+UI library: <a href="https://reactnativeelements.com/">React Native Elements</a>
+
+### Development Guidelines:
+Whenever you want to make an edit to the repo, do the following:
+1. Make a new branch with the new branch starting w/ your initials and a slash : ```git checkout -b sk/[insert rest of branch name here]```
+2. After adding + committing changes, run following command: ```git push --set-upstream origin sk/[your branch name from step 1 here]```
+3. Go to GitHub website and go to "Pull requests"
+4. Create a new pull request for your branch + add any important info
+5. Send message to rest of chat to review PR + be able to merge it into main
+
 ### Prerequisites
 
 You can get a local copy up and running with an EMULATOR or through the EXPO GO APP:
