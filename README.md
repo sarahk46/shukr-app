@@ -5,6 +5,7 @@
 
 ### Resources:
 UI library: <a href="https://reactnativeelements.com/">React Native Elements</a>
+Icons: <a href="https://pictogrammers.com/library/mdi/">MaterialCommunityIcons</a>
 
 ### Development Guidelines:
 Whenever you want to make an edit to the repo, do the following:
