@@ -1,9 +1,16 @@
-import { Text, View } from 'react-native';
+import { Text, View, ScrollView } from 'react-native';
+
+// For ScrollView: read more here https://reactnative.dev/docs/scrollview
 
 function Journal() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Journal page</Text>
+    <View>
+        <Text>
+          Your entries displayed here
+        </Text>
+        <ScrollView>
+      
+      </ScrollView>
     </View>
   );
 }
