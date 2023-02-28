@@ -1,6 +1,10 @@
 import { StyleSheet, View } from 'react-native';
 import { Card, Button, Text } from '@rneui/themed';
 import { NavigationContainer } from '@react-navigation/native';
+// TODO: Figure out redirection w/ "Reflect Now" to WriteEntry page
+// NavigationContainer should be a part of the solution -- read more here: 
+// https://reactnavigation.org/docs/navigating
+// The packages for this are installed btw here
 
 function Home({ navigation }) {
   return (
