@@ -1,16 +1,26 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-    container: {
+    // container: {
+    //   flex: 1,
+    //   alignItems: 'center',
+    //   justifyContent: 'center',
+    //   backgroundColor: '#fff',
+    // },
+    box: {
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
       backgroundColor: '#fff',
+      maxHeight: 200,
+      borderColor: "coolGray.200",
     },
     hadithBox: {
-      width: '90%',
-      padding: 16,
-      borderRadius: 8,
+      width: '95%',
+      height: '48%',
+      alignSelf: 'center',
+      padding: 14,
+      marginTop: 10,
       shadowColor: '#000',
       shadowOffset: {
         width: 0,
@@ -23,33 +33,40 @@ const styles = StyleSheet.create({
       alignItems: 'center',
     },
     title: {
-    //   fontFamily: 'Open Sans',
-      fontSize: 24,
-      marginBottom: 16,
+      // fontFamily: 'Open Sans',
+      // fontSize: '50xl',
+      // textAlign: 'center',
+      // marginBottom: 16,
+      // marginTop: 20,
+      fontSize: 22,
+      lineHeight: 40,
+      marginTop: 0,
+    },
+    citationText: {
+      fontSize: '12',
     },
     hadithTextArabic: {
-    //   fontFamily: 'Amiri Quran',
-      fontSize: 24,
-      textAlign: 'center',
-      marginBottom: 8,
+      // fontFamily: 'Amiri Quran',
+      fontSize: 16,
+      // textAlign: 'center',
+      marginTop: 10,
+      // marginBottom: 8,
     },
     hadithTextEnglish: {
-    //   fontFamily: 'Open Sans',
+      // fontFamily: 'Open Sans',
       fontSize: 16,
-      textAlign: 'center',
-      marginBottom: 16,
+      // textAlign: 'center',
+      marginTop: 10,
+      // marginBottom: 16,
     },
     button: {
-      backgroundColor: '#3f51b5',
-      borderRadius: 4,
-      padding: 8,
-      width: '100%',
-    },
-    buttonText: {
-      color: '#fff',
-    //   fontFamily: 'Open Sans',
-      fontSize: 16,
-      textAlign: 'center',
+      backgroundColor: '#B8F8BE',
+      // borderRadius: 4,
+      // padding: 8,
+      // width: '100%',
+      // alignContent: 'center',
+      fontSize: 20,
+      marginTop: 30,
     },
   });
   
