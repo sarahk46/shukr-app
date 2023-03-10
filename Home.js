@@ -1,8 +1,8 @@
-import { StyleSheet, View } from 'react-native';
-import { Card, Button, Text } from '@rneui/themed';
-import { NavigationContainer } from '@react-navigation/native';
+import { Box, Heading, Text, Button, NativeBaseProvider, VStack } from 'native-base';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import styles from './styles';
+
 
 // TODO: Figure out redirection w/ "Reflect Now" to WriteEntry page
 // NavigationContainer should be a part of the solution -- read more here: 
@@ -34,43 +34,30 @@ function Home({ navigation }) {
   }, []);
 
   return (
-    <View style={[styles.container, { justifyContent: 'flex-start', alignItems: 'center' }]}>
-      <Card>
-        <Card.Title style={styles.title}>Hadith of the Day</Card.Title>
-        <Card.Divider />
-        <Text style={styles.fonts} h2>
-            Insert Arabic text here
-        </Text>
-        <Text style={styles.fonts} h4>{hadiths[0]}</Text>
+    <NativeBaseProvider>
+    {/* <Container style={styles.container}>
+      <Container style={styles.box}>
+        <Text style={styles.title}>Hadith of the Day</Text>
+        <Text style={styles.hadithTextArabic}>Arabic Text</Text>
+        <Text style={styles.hadithTextEnglish}>English Text</Text>
+        <Button style={styles.button} variant="solid">
+          <Text style={styles.buttonText}>Reflect Now!</Text>
+        </Button>
+      </Container>
+    </Container> */}
+    <Box style={styles.hadithBox}>
+        <Text bold italic style={styles.title}>HADITH OF THE DAY</Text>
+        <Text style={styles.hadithTextArabic}> 
+دَّثَنَا قَبِيصَةُ، حَدَّثَنَا سُفْيَانُ، عَنْ أَبِي حَازِمٍ، عَنْ سَهْلِ بْنِ سَعْدٍ ـ رضى الله عنه ـ عَنِ النَّبِيِّ صلى الله عليه وسلم قَالَ " الرَّوْحَةُ وَالْغَدْوَةُ فِي سَبِيلِ اللَّهِ أَفْضَلُ مِنَ الدُّنْيَا وَمَا فِيهَا</Text>
+        <Text style={styles.citationText}> (Bukhari, 2794) </Text>
+        <Text style={styles.hadithTextEnglish}>Narrated Sahl bin Sa`d: The Prophet (ﷺ) said, "A single endeavor in Allah's Cause in the afternoon and in the forenoon is better than the world and whatever is in it.”</Text>
+        <Button style={styles.button} variant="solid" _text={{color: "#fffff"}}>
+        Reflect Now!
+        </Button>
+    </Box>
+  </NativeBaseProvider>
 
-        <Button
-            color='#cab1bd'
-            style={styles.buttonStyle}
-            title="Reflect Now"
-            onPress={() => alert('Pressed')}
-          />
-
-      </Card>
-    </View>
   );
 }
-
-const styles = StyleSheet.create({
-  title: {
-    fontSize: 20,
-  },
-  fonts: {
-    marginBottom: 12,
-    fontSize: 10,
-    textAlign: 'center',
-  },
-
-  buttonStyle: {
-    borderRadius: 0,
-    marginLeft: 0,
-    marginRight: 0,
-    marginBottom: 0,
-  }
-});
 
 export default Home;
