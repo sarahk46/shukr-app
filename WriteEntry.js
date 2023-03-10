@@ -1,4 +1,3 @@
-import { Text, View } from 'react-native';
 import styles from './styles';
 import { Box, Heading, Text, NativeBaseProvider, Divider, Stack, Input, Button } from 'native-base';
 import { useState, useEffect } from 'react';
