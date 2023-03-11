@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styles from './styles';
 import EntryItem from './EntryItem';
+import HadithCard from './HadithCard';
 
 // TODO: Figure out redirection w/ "Reflect Now" to WriteEntry page
 // NavigationContainer should be a part of the solution -- read more here: 
@@ -36,20 +37,11 @@ function Home({ navigation }) {
 
   return (
     <NativeBaseProvider>
-    
-    <Box style={styles.hadithBox}>
-        <Text bold italic style={styles.title}>HADITH OF THE DAY</Text>
-        <Text style={styles.hadithTextArabic}> 
-دَّثَنَا قَبِيصَةُ، حَدَّثَنَا سُفْيَانُ، عَنْ أَبِي حَازِمٍ، عَنْ سَهْلِ بْنِ سَعْدٍ ـ رضى الله عنه ـ عَنِ النَّبِيِّ صلى الله عليه وسلم قَالَ " الرَّوْحَةُ وَالْغَدْوَةُ فِي سَبِيلِ اللَّهِ أَفْضَلُ مِنَ الدُّنْيَا وَمَا فِيهَا</Text>
-        <Text style={styles.citationText}> (Bukhari, 2794) </Text>
-        <Text style={styles.hadithTextEnglish}>Narrated Sahl bin Sa`d: The Prophet (ﷺ) said, "A single endeavor in Allah's Cause in the afternoon and in the forenoon is better than the world and whatever is in it.”</Text>
-        <Button style={styles.button} variant="solid" _text={{color: "#fffff"}}>
-        Reflect Now!
-        </Button>
-    </Box>
-    <Text bold italic style={styles.title}>Past Entries</Text>
-    
     <ScrollView>
+      <HadithCard isHomeCard={true}/>
+
+      <Text bold italic style={styles.title}>Past Entries</Text>
+      
       <EntryItem title="Entry 1" hadith="Hadith Info" />
       <EntryItem title="Entry 2" hadith="Hadith Info" />
       <EntryItem title="Entry 3" hadith="Hadith Info" />

@@ -15,9 +15,11 @@ const styles = StyleSheet.create({
       maxHeight: 200,
       borderColor: "coolGray.200",
     },
+    // TODO: Before we do our release, we most definitely need to figure out how to have
+    // height be self-expanded
     hadithBox: {
       width: '95%',
-      height: '42%',
+      height: 350,
       alignSelf: 'center',
       padding: 14,
       marginTop: 10,
@@ -34,7 +36,7 @@ const styles = StyleSheet.create({
     },
     entryHadithBox: {
       width: '95%',
-      height: '30%', // would be really cool to get height to adjust based on the size of the hadith
+      height: 300,
       alignSelf: 'center',
       padding: 14,
       marginTop: 10,
@@ -100,7 +102,7 @@ const styles = StyleSheet.create({
       // width: '100%',
       // alignContent: 'center',
       fontSize: 20,
-      marginTop: 10,
+      marginTop: 30,
     },
   });
   

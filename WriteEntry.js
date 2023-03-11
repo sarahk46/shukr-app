@@ -1,6 +1,7 @@
 import styles from './styles';
 import { Box, Heading, Text, NativeBaseProvider, Divider, Stack, Input, Button, ScrollView } from 'native-base';
 import { useState, useEffect } from 'react';
+import HadithCard from './HadithCard';
 
 function WriteEntry() {
   return (
@@ -10,20 +11,11 @@ function WriteEntry() {
     // Second display the actual questions -- need to figure out styling in separate area
     // Maybe want a box for each question + answer too
     // Gotta also add scrollview and account for lack of button in styling
-    // TODO: Probably separate out the question parts to their own component
-    // for hadithBox
     // Consideration: Need to also scroll all the way to the bottom
     // Some issues in the text display
     <NativeBaseProvider>
       <ScrollView>
-        <Box style={styles.entryHadithBox}>
-            <Text bold italic style={styles.title}>HADITH OF THE DAY</Text>
-            <Text style={styles.hadithTextArabic}> 
-    دَّثَنَا قَبِيصَةُ، حَدَّثَنَا سُفْيَانُ، عَنْ أَبِي حَازِمٍ، عَنْ سَهْلِ بْنِ سَعْدٍ ـ رضى الله عنه ـ عَنِ النَّبِيِّ صلى الله عليه وسلم قَالَ " الرَّوْحَةُ وَالْغَدْوَةُ فِي سَبِيلِ اللَّهِ أَفْضَلُ مِنَ الدُّنْيَا وَمَا فِيهَا</Text>
-
-            <Text> (Bukhari, 2794) </Text>
-            <Text>Narrated Sahl bin Sa`d: The Prophet (ﷺ) said, "A single endeavor in Allah's Cause in the afternoon and in the forenoon is better than the world and whatever is in it.”</Text>
-        </Box>
+        <HadithCard/>
         <Heading size="md" alignSelf="center" marginTop="4" marginBottom="2">Reflection</Heading>
         <Divider marginBottom="4" style={styles.questionDivider}/>
         <Stack direction="column" space={3}>
