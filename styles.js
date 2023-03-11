@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     },
     hadithBox: {
       width: '95%',
-      height: '48%',
+      height: '42%',
       alignSelf: 'center',
       padding: 14,
       marginTop: 10,
@@ -31,6 +31,40 @@ const styles = StyleSheet.create({
       elevation: 5,
       backgroundColor: '#fff',
       alignItems: 'center',
+    },
+    entryHadithBox: {
+      width: '95%',
+      height: '30%', // would be really cool to get height to adjust based on the size of the hadith
+      alignSelf: 'center',
+      padding: 14,
+      marginTop: 10,
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0,
+        height: 2,
+      },
+      shadowOpacity: 0.25,
+      shadowRadius: 4,
+      elevation: 5,
+      backgroundColor: '#fff',
+      alignItems: 'center',
+    },
+    questionDivider: {
+      width: '95%',
+      alignSelf: "center",
+      marginTop: 4,
+    },
+    questionText: {
+      marginLeft: 10,
+      marginTop: 4,
+      marginBottom: 4,
+    },
+    entryInput: {
+      width: '50%',
+      alignSelf: "center",
+      height: 100,
+      variant: "outline",
+      multiline: true,
     },
     title: {
       // fontFamily: 'Open Sans',
@@ -66,7 +100,7 @@ const styles = StyleSheet.create({
       // width: '100%',
       // alignContent: 'center',
       fontSize: 20,
-      marginTop: 30,
+      marginTop: 10,
     },
   });
   
