@@ -1,17 +1,20 @@
-import { Text, View, ScrollView } from 'react-native';
+import { NativeBaseProvider, ScrollView } from 'native-base';
+import EntryItem from './EntryItem';
 
-// For ScrollView: read more here https://reactnative.dev/docs/scrollview
-
+// TODO: Before release, would need to also accept
+// a list of data of all entries where for each entry, also includes
+// data of answers for each question
+// Renders an EntryItem for each entry
 function Journal() {
   return (
-    <View>
-        <Text>
-          Your entries displayed here
-        </Text>
-        <ScrollView>
-      
-      </ScrollView>
-    </View>
+    <NativeBaseProvider>
+          <ScrollView>
+            <EntryItem title="Entry 1" hadith="Hadith Info" />
+            <EntryItem title="Entry 2" hadith="Hadith Info" />
+            <EntryItem title="Entry 3" hadith="Hadith Info" />
+          </ScrollView>
+    </NativeBaseProvider>
+
   );
 }
 
