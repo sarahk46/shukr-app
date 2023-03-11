@@ -1,13 +1,14 @@
-import { Box, Heading, Text, Button, NativeBaseProvider, VStack } from 'native-base';
-import { useState, useEffect } from 'react';
+import { Box, Heading, Text, Button, NativeBaseProvider, Stack, View, Divider, ScrollView } from 'native-base';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styles from './styles';
-
+import EntryItem from './EntryItem';
 
 // TODO: Figure out redirection w/ "Reflect Now" to WriteEntry page
 // NavigationContainer should be a part of the solution -- read more here: 
 // https://reactnavigation.org/docs/navigating
 // The packages for this are installed btw here
+
 
 const fetchHadiths = async (hadithUrls) => {
   const hadiths = [];
@@ -35,16 +36,7 @@ function Home({ navigation }) {
 
   return (
     <NativeBaseProvider>
-    {/* <Container style={styles.container}>
-      <Container style={styles.box}>
-        <Text style={styles.title}>Hadith of the Day</Text>
-        <Text style={styles.hadithTextArabic}>Arabic Text</Text>
-        <Text style={styles.hadithTextEnglish}>English Text</Text>
-        <Button style={styles.button} variant="solid">
-          <Text style={styles.buttonText}>Reflect Now!</Text>
-        </Button>
-      </Container>
-    </Container> */}
+    
     <Box style={styles.hadithBox}>
         <Text bold italic style={styles.title}>HADITH OF THE DAY</Text>
         <Text style={styles.hadithTextArabic}> 
@@ -55,6 +47,14 @@ function Home({ navigation }) {
         Reflect Now!
         </Button>
     </Box>
+    <Text bold italic style={styles.title}>Past Entries</Text>
+    
+    <ScrollView>
+      <EntryItem title="Entry 1" hadith="Hadith Info" />
+      <EntryItem title="Entry 2" hadith="Hadith Info" />
+      <EntryItem title="Entry 3" hadith="Hadith Info" />
+    </ScrollView>
+
   </NativeBaseProvider>
 
   );
