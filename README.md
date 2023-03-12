@@ -1,4 +1,4 @@
-## Shukr
+## Hadithly
 <!-- GETTING STARTED -->
 ## Getting Started
 

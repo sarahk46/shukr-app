@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "22905912506",
+    "project_id": "hadithly-63146",
+    "storage_bucket": "hadithly-63146.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:22905912506:android:c5c1c8ed499a3b42e9d683",
+        "android_client_info": {
+          "package_name": "com.rafiak.hadithly"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "22905912506-uikjq10erna3qul218eaqtrls0ijsr74.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACgWle95A6yV-sSLs3NYWeulmuamsJYgE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "22905912506-uikjq10erna3qul218eaqtrls0ijsr74.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

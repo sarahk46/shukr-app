@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Shukr",
-    "slug": "Shukr",
+    "name": "Hadithly",
+    "slug": "hadithly",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -18,16 +18,24 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.rafiak.hadithly"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.rafiak.hadithly"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "7e05c9c4-78c8-430d-92c4-e8b27479ffe7"
+      }
+    },
+    "owner": "rafiak"
   }
 }

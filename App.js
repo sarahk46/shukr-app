@@ -6,7 +6,7 @@ import Settings from './Settings.js';
 import Journal from './Journal.js';
 import WriteEntry from './WriteEntry.js';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-
+import firestore from '@react-native-firebase/firestore';
 
 const Tab = createBottomTabNavigator();
 
