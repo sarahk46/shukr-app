@@ -12,7 +12,7 @@ const Tab = createBottomTabNavigator();
 
 function MyTabs() {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator initialRouteName='Salam!'>
       <Tab.Screen name="Write an Entry" 
           component={WriteEntry}
           options={{
