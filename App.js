@@ -1,14 +1,22 @@
-import { StyleSheet } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import { ImageBackground, StyleSheet } from 'react-native';
+import { DefaultTheme, NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from './Home.js';
-import Settings from './Settings.js';
 import Journal from './Journal.js';
 import WriteEntry from './WriteEntry.js';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const Tab = createBottomTabNavigator();
 const iconSize = 36;
+// For the background image:
+// https://stackoverflow.com/questions/54599305/how-to-set-background-image-with-react-native-and-react-navigation
+const navTheme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    background: 'transparent',
+  },
+};
 
 function MyTabs() {
   return (
@@ -53,13 +61,22 @@ function MyTabs() {
 
 function App() {
   return (
-    <NavigationContainer>
-      <MyTabs />
-    </NavigationContainer>
+      <ImageBackground source={require('./BackgroundImage.png')} style={styles.image}>
+        <NavigationContainer theme={navTheme}>
+          <MyTabs />
+        </NavigationContainer>
+      </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
+  backgroundContainer: {
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
+  },
   container: {
     flex: 1,
     backgroundColor: '#fff',
@@ -69,6 +86,11 @@ const styles = StyleSheet.create({
   navigationBar: {
     backgroundColor: '#3D405B',
     color: '#3D405B',
+  },
+  image: {
+    flex: 1,
+    justifyContent: 'center',
+    flexDirection: 'column',
   },
 });
 
