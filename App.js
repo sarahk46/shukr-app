@@ -7,18 +7,32 @@ import Journal from './Journal.js';
 import WriteEntry from './WriteEntry.js';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-
 const Tab = createBottomTabNavigator();
+const iconSize = 36;
 
 function MyTabs() {
   return (
-    <Tab.Navigator initialRouteName='Salam!'>
+    <Tab.Navigator initialRouteName='Salam!' 
+      screenOptions= {{
+        tabBarStyle: { backgroundColor: '#3d405b'},
+        headerShown: false,
+      }}>
+      <Tab.Screen name="Salam!" 
+        component={Home} 
+        options={{
+          tabBarLabel: 'Home',
+          tabBarLabelStyle: {color: '#F2CC8F'},
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="home" color={'#F2CC8F'} size={iconSize} />
+          ),
+        }}/>
       <Tab.Screen name="Write an Entry" 
           component={WriteEntry}
           options={{
           tabBarLabel: 'Write an Entry',
+          tabBarLabelStyle: {color: '#F2CC8F'},
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="pen" color={color} size={size} />
+            <MaterialCommunityIcons name="pen-plus" color={'#F2CC8F'} size={iconSize} />
           ),
           }}
       />
@@ -26,28 +40,13 @@ function MyTabs() {
           component={Journal} 
           options={{
           tabBarLabel: 'Your Journal',
+          tabBarLabelStyle: {color: '#F2CC8F'},
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="notebook" color={color} size={size} />
+            <MaterialCommunityIcons name="notebook" color={'#F2CC8F'} size={iconSize} />
           ),
           }}
       />
-      <Tab.Screen name="Salam!" 
-        component={Home} 
-        options={{
-          tabBarLabel: 'Home',
-          tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="home" color={color} size={size} />
-          ),
-        }}/>
-      <Tab.Screen name="Settings"
-        component={Settings} 
-        options={{
-          tabBarLabel: 'Settings',
-          tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="cog" color={color} size={size} />
-          ),
-          }}
-      />
+
     </Tab.Navigator>
   );
 }
@@ -66,6 +65,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  navigationBar: {
+    backgroundColor: '#3D405B',
+    color: '#3D405B',
   },
 });
 
