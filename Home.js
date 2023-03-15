@@ -39,12 +39,6 @@ function Home({ navigation }) {
     <NativeBaseProvider>
     <ScrollView>
       <HadithCard isHomeCard={true}/>
-
-      <Text bold italic style={styles.title}>Past Entries</Text>
-      
-      <EntryItem title="Entry 1" hadith="Hadith Info" />
-      <EntryItem title="Entry 2" hadith="Hadith Info" />
-      <EntryItem title="Entry 3" hadith="Hadith Info" />
     </ScrollView>
 
   </NativeBaseProvider>

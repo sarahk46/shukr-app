@@ -18,11 +18,13 @@ const styles = StyleSheet.create({
     // TODO: Before we do our release, we most definitely need to figure out how to have
     // height be self-expanded
     hadithBox: {
+      backgroundColor: '#F4F1DE',
       width: '95%',
-      height: 350,
+      height: 325,
+      borderRadius: 30,
       alignSelf: 'center',
       padding: 14,
-      marginTop: 10,
+      marginTop: 80,
       shadowColor: '#000',
       shadowOffset: {
         width: 0,
@@ -31,10 +33,10 @@ const styles = StyleSheet.create({
       shadowOpacity: 0.25,
       shadowRadius: 4,
       elevation: 5,
-      backgroundColor: '#fff',
       alignItems: 'center',
     },
     entryHadithBox: {
+      borderRadius: 30,
       width: '95%',
       height: 300,
       alignSelf: 'center',
@@ -48,7 +50,7 @@ const styles = StyleSheet.create({
       shadowOpacity: 0.25,
       shadowRadius: 4,
       elevation: 5,
-      backgroundColor: '#fff',
+      backgroundColor: '#F4F1DE',
       alignItems: 'center',
     },
     questionDivider: {
@@ -79,30 +81,32 @@ const styles = StyleSheet.create({
       marginTop: 0,
     },
     citationText: {
-      fontSize: '12',
+      fontSize: 14,
+      textAlign: 'center',
     },
     hadithTextArabic: {
       // fontFamily: 'Amiri Quran',
       fontSize: 16,
-      // textAlign: 'center',
+      textAlign: 'center',
       marginTop: 10,
       // marginBottom: 8,
     },
     hadithTextEnglish: {
       // fontFamily: 'Open Sans',
       fontSize: 16,
-      // textAlign: 'center',
+      textAlign: 'center',
       marginTop: 10,
       // marginBottom: 16,
     },
     button: {
-      backgroundColor: '#B8F8BE',
+      backgroundColor: '#F2CC8F',
       // borderRadius: 4,
       // padding: 8,
       // width: '100%',
       // alignContent: 'center',
       fontSize: 20,
-      marginTop: 30,
+      marginTop: 20,
+      borderRadius: 30,
     },
   });
   
