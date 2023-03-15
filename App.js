@@ -70,19 +70,6 @@ function App() {
 }
 
 const styles = StyleSheet.create({
-  backgroundContainer: {
-    position: 'absolute',
-    top: 0,
-    bottom: 0,
-    left: 0,
-    right: 0,
-  },
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
   navigationBar: {
     backgroundColor: '#3D405B',
     color: '#3D405B',
