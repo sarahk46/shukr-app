@@ -1,4 +1,5 @@
 import { Box, Heading, Text, Button, NativeBaseProvider, Stack, View, Divider, ScrollView } from 'native-base';
+import {Image} from 'react-native';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styles from './styles';
@@ -22,6 +23,16 @@ const fetchHadiths = async (hadithUrls) => {
   return hadiths;
 };
 
+function displayComingSoon() {
+  return(
+    <View alignItems="center" marginTop="30">
+      <Image source={require('./LoadingWidgets.png')}/>
+        <Text bold fontSize="14">Coming Soon!</Text>
+        <Text>More widgets to come soon!</Text>
+    </View>
+  );
+}
+
 function Home({ navigation }) {
   const hadithUrls = [
     "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-abudawud/2774.min.json",
@@ -39,6 +50,7 @@ function Home({ navigation }) {
     <NativeBaseProvider>
     <ScrollView>
       <HadithCard isHomeCard={true}/>
+      {displayComingSoon()}
     </ScrollView>
 
   </NativeBaseProvider>
