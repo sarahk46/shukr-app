@@ -1,8 +1,8 @@
 import { Text, Button, NativeBaseProvider, Stack, View, Divider, ScrollView } from 'native-base';
-import {Image} from 'react-native';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import HadithCard from './HadithCard';
+import ContinueButton from './ContinueButton';
 
 // TODO: Figure out redirection w/ "Reflect Now" to WriteEntry page
 // NavigationContainer should be a part of the solution -- read more here: 
@@ -21,17 +21,31 @@ const fetchHadiths = async (hadithUrls) => {
   return hadiths;
 };
 
-function displayComingSoon() {
-  return(
-    <View alignItems="center" marginTop="30">
-      <Image source={require('./LoadingWidgets.png')}/>
-        <Text bold fontSize="14">Coming Soon!</Text>
-        <Text>More widgets to come soon!</Text>
-    </View>
-  );
+// function displayComingSoon() {
+//   return(
+//     <View alignItems="center" marginTop="30">
+//       <Image source={require('./LoadingWidgets.png')}/>
+//         <Text bold fontSize="14">Coming Soon!</Text>
+//         <Text>More widgets to come soon!</Text>
+//     </View>
+//   );
+// }
+
+function topBar() {
+    return(
+        <View marginTop="10"
+        marginBottom="10"
+        flexDirection="row" alignItems="center">
+            <Text fontSize="16" left="150" textAlign="center">March 14, 2022</Text>
+            <Button
+            left="200"
+            >X</Button>
+        </View>
+
+    );
 }
 
-function Home({ navigation }) {
+function WriteEntryPart1({ navigation }) {
   const hadithUrls = [
     "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-abudawud/2774.min.json",
   ];
@@ -45,15 +59,23 @@ function Home({ navigation }) {
   }, []);
 
   return (
-    <NativeBaseProvider>
+    <NativeBaseProvider alignItems="center">
+    {/* <View alignContent="center"> */}
+    {topBar()}
     <ScrollView>
-      <HadithCard isHomeCard={true}/>
-      {displayComingSoon()}
+        
+        <Text bold fontSize="30" color='grey' textAlign="center" marginBottom="10">Pause and Reflect</Text>
+        <HadithCard isHomeCard={false}/>
+        <Text marginTop="10" fontSize="20" textAlign="center" >Once you're done reading...</Text>
+        <ContinueButton/>
+      
     </ScrollView>
+    {/* </View> */}
+
 
   </NativeBaseProvider>
 
   );
 }
 
-export default Home;
+export default WriteEntryPart1;

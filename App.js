@@ -5,6 +5,9 @@ import Home from './Home.js';
 import Journal from './Journal.js';
 import WriteEntry from './WriteEntry.js';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+// This is just for testing
+import WriteEntryPart1 from './WriteEntryPart1.js';
+
 
 const Tab = createBottomTabNavigator();
 const iconSize = 36;
@@ -50,7 +53,7 @@ function MyTabs() {
       
       >
       <Tab.Screen name="Salam!" 
-        component={Home} 
+        component={WriteEntryPart1} 
         options={{
           tabBarLabel: 'Home',
           // If want to do the header:
