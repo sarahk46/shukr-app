@@ -1,9 +1,7 @@
-import { Box, Heading, Text, Button, NativeBaseProvider, Stack, View, Divider, ScrollView } from 'native-base';
+import { Text, Button, NativeBaseProvider, Stack, View, Divider, ScrollView } from 'native-base';
 import {Image} from 'react-native';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import styles from './styles';
-import EntryItem from './EntryItem';
 import HadithCard from './HadithCard';
 
 // TODO: Figure out redirection w/ "Reflect Now" to WriteEntry page
