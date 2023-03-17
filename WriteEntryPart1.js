@@ -1,8 +1,9 @@
-import { Text, Button, NativeBaseProvider, Stack, View, Divider, ScrollView } from 'native-base';
+import { Text, Button, NativeBaseProvider, CloseIcon, Stack, View, Divider, ScrollView } from 'native-base';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import HadithCard from './HadithCard';
 import ContinueButton from './ContinueButton';
+import styles from './styles';
 
 // TODO: Figure out redirection w/ "Reflect Now" to WriteEntry page
 // NavigationContainer should be a part of the solution -- read more here: 
@@ -35,11 +36,14 @@ function topBar() {
     return(
         <View marginTop="10"
         marginBottom="10"
-        flexDirection="row" alignItems="center">
-            <Text fontSize="16" left="150" textAlign="center">March 14, 2022</Text>
+        flexDirection="row" alignItems="center" flexWrap="wrap">
+            <Text alignSelf="center" fontSize="16" left="150" textAlign="center">March 14, 2022</Text>
             <Button
-            left="200"
-            >X</Button>
+            left="250"
+            startIcon={<CloseIcon/>}
+            _icon={{color: "black"}}
+            style={styles.button}
+            />
         </View>
 
     );

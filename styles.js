@@ -107,6 +107,7 @@ const styles = StyleSheet.create({
       fontSize: 20,
       marginTop: 20,
       borderRadius: 30,
+      textDecorationColor: '#fff',
     },
   });
   
