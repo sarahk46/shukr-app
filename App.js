@@ -7,6 +7,7 @@ import WriteEntry from './WriteEntry.js';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 // This is just for testing
 import WriteEntryPart1 from './WriteEntryPart1.js';
+import ViewEntry from './ViewEntry.js';
 
 
 const Tab = createBottomTabNavigator();
@@ -29,7 +30,6 @@ function MyTabs() {
           headerShown: false,
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
-
             if (route.name === 'Salam!') {
               iconName = focused
                 ? 'home'
@@ -43,7 +43,6 @@ function MyTabs() {
               'book'
               : 'book-outline';
             }
-
             // You can return any component that you like here!
             return <MaterialCommunityIcons name={iconName} size={size} color={color} />;
           },
@@ -53,7 +52,7 @@ function MyTabs() {
       
       >
       <Tab.Screen name="Salam!" 
-        component={WriteEntryPart1} 
+        component={Home} 
         options={{
           tabBarLabel: 'Home',
           // If want to do the header:
@@ -87,7 +86,6 @@ function MyTabs() {
           // ),
           }}
       />
-
     </Tab.Navigator>
   );
 }
