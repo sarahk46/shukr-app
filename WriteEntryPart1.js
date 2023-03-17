@@ -1,4 +1,4 @@
-import { Text, Button, NativeBaseProvider, CloseIcon, Stack, View, Divider, ScrollView } from 'native-base';
+import { Text, Button, NativeBaseProvider, ChevronLeftIcon, CloseIcon, Input, Stack, View, Divider, ScrollView } from 'native-base';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import HadithCard from './HadithCard';
@@ -32,7 +32,7 @@ const fetchHadiths = async (hadithUrls) => {
 //   );
 // }
 
-function topBar() {
+function topBarWithEscOnly() {
     return(
         <View marginTop="10"
         marginBottom="10"
@@ -47,6 +47,134 @@ function topBar() {
         </View>
 
     );
+}
+
+function topBarWithBackAndEsc() {
+    return(
+        <View marginTop="10"
+        marginBottom="10"
+        flexDirection="row" alignItems="center" flexWrap="wrap">
+        <Button
+            left="10"
+            startIcon={<ChevronLeftIcon/>}
+            _icon={{color: "black"}}
+            style={styles.button}
+            />
+            <Text left="100" alignSelf="center" fontSize="16" textAlign="center">March 14, 2022</Text>
+            <Button
+            left="175"
+            startIcon={<CloseIcon/>}
+            _icon={{color: "black"}}
+            style={styles.button}
+            />
+        </View>
+
+    );
+}
+
+function pauseAndReflect() {
+    return(
+    <NativeBaseProvider alignItems="center">
+    {/* <View alignContent="center"> */}
+    {topBarWithEscOnly()}
+    <ScrollView>
+        
+        <Text bold fontSize="30" color='grey' textAlign="center" marginBottom="10">Pause and Reflect</Text>
+        <HadithCard isHomeCard={false}/>
+        <Text marginTop="10" fontSize="20" textAlign="center" >Once you're done reading...</Text>
+        <ContinueButton/>
+      
+    </ScrollView>
+    {/* </View> */}
+
+
+  </NativeBaseProvider>
+    );
+
+}
+
+function question1Reflection() {
+    return (
+    <NativeBaseProvider alignItems="center">
+    {/* <View alignContent="center"> */}
+    {topBarWithBackAndEsc()}
+    <ScrollView>
+        <HadithCard isHomeCard={false}/>
+        <Text 
+        
+        style={styles.questionText}>Understand: How would you describe this hadith to someone else?</Text>
+        <Input width="95%"
+            alignSelf="center"
+            // placeholder="Question 1 Answer" 
+            placeholder="Type your response here..."
+            multiline={true}
+            style={styles.entryInput}
+        />
+
+        <ContinueButton/>
+      
+    </ScrollView>
+    {/* </View> */}
+  </NativeBaseProvider>
+    );
+}
+
+function question2Reflection() {
+    return (
+        <NativeBaseProvider alignItems="center">
+        {/* <View alignContent="center"> */}
+        {topBarWithBackAndEsc()}
+        <ScrollView>
+            <HadithCard isHomeCard={false}/>
+            <Text 
+            
+            style={styles.questionText}>Reflect: How does this apply to your past and present?</Text>
+            <Input width="95%"
+                alignSelf="center"
+                // placeholder="Question 1 Answer" 
+                placeholder="Type your response here..."
+                multiline={true}
+                style={styles.entryInput}
+            />
+    
+            <ContinueButton/>
+          
+        </ScrollView>
+        {/* </View> */}
+    
+    
+      </NativeBaseProvider>
+    
+      );
+}
+
+function question3Reflection() {
+    return (
+    <NativeBaseProvider alignItems="center">
+    {/* <View alignContent="center"> */}
+    {topBarWithBackAndEsc()}
+    <ScrollView>
+        <HadithCard isHomeCard={false}/>
+        <Text 
+        
+        style={styles.questionText}>Reflect: How does this apply to your past and present?</Text>
+        <Input width="95%"
+            alignSelf="center"
+            // placeholder="Question 1 Answer" 
+            placeholder="Type your response here..."
+            multiline={true}
+            style={styles.entryInput}
+        />
+
+        <ContinueButton/>
+      
+    </ScrollView>
+    {/* </View> */}
+
+
+  </NativeBaseProvider>
+
+  );
 }
 
 function WriteEntryPart1({ navigation }) {
@@ -65,12 +193,20 @@ function WriteEntryPart1({ navigation }) {
   return (
     <NativeBaseProvider alignItems="center">
     {/* <View alignContent="center"> */}
-    {topBar()}
+    {topBarWithBackAndEsc()}
     <ScrollView>
-        
-        <Text bold fontSize="30" color='grey' textAlign="center" marginBottom="10">Pause and Reflect</Text>
         <HadithCard isHomeCard={false}/>
-        <Text marginTop="10" fontSize="20" textAlign="center" >Once you're done reading...</Text>
+        <Text 
+        
+        style={styles.questionText}>Reflect: How does this apply to your past and present?</Text>
+        <Input width="95%"
+            alignSelf="center"
+            // placeholder="Question 1 Answer" 
+            placeholder="Type your response here..."
+            multiline={true}
+            style={styles.entryInput}
+        />
+
         <ContinueButton/>
       
     </ScrollView>

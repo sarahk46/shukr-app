@@ -60,15 +60,22 @@ const styles = StyleSheet.create({
     },
     questionText: {
       marginLeft: 10,
-      marginTop: 4,
-      marginBottom: 4,
+      marginTop: 26,
+      marginBottom: 30,
+      fontSize: 16,
+      textAlign: "center",
+      marginLeft: 20,
+      marginRight: 20
     },
     entryInput: {
-      width: '50%',
+      width: 200,
       alignSelf: "center",
-      height: 100,
+      height: 150,
       variant: "outline",
       multiline: true,
+      backgroundColor: "#F4F1DE",
+      fontSize: 18,
+      color: "#A3A3A3",
     },
     title: {
       // fontFamily: 'Open Sans',
