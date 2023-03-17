@@ -77,6 +77,16 @@ const styles = StyleSheet.create({
       fontSize: 18,
       color: "#A3A3A3",
     },
+    viewEntryText: {
+      width: 375,
+      alignSelf: "center",
+      height: 250,
+      variant: "outline",
+      multiline: true,
+      backgroundColor: "#F4F1DE",
+      fontSize: 18,
+      color: "#A3A3A3",
+    },
     title: {
       // fontFamily: 'Open Sans',
       // fontSize: '50xl',
@@ -115,6 +125,19 @@ const styles = StyleSheet.create({
       marginTop: 20,
       borderRadius: 30,
       textDecorationColor: '#fff',
+    },
+    journalEntryButton: {
+      backgroundColor: '#F4F1DE',
+      borderRadius: 30,
+      // marginTop: 80,
+      marginBottom: 10,
+      height: 50,
+      marginLeft: 12,
+      marginRight: 12,
+      flexDirection: "row",
+      alignItems: "center",
+      // flex: "2",
+      justifyContent: "space-between",
     },
   });
   

@@ -22,16 +22,6 @@ const fetchHadiths = async (hadithUrls) => {
   return hadiths;
 };
 
-// function displayComingSoon() {
-//   return(
-//     <View alignItems="center" marginTop="30">
-//       <Image source={require('./LoadingWidgets.png')}/>
-//         <Text bold fontSize="14">Coming Soon!</Text>
-//         <Text>More widgets to come soon!</Text>
-//     </View>
-//   );
-// }
-
 function topBarWithEscOnly() {
     return(
         <View marginTop="10"
@@ -101,7 +91,6 @@ function question1Reflection() {
     <ScrollView>
         <HadithCard isHomeCard={false}/>
         <Text 
-        
         style={styles.questionText}>Understand: How would you describe this hadith to someone else?</Text>
         <Input width="95%"
             alignSelf="center"
@@ -157,7 +146,7 @@ function question3Reflection() {
         <HadithCard isHomeCard={false}/>
         <Text 
         
-        style={styles.questionText}>Reflect: How does this apply to your past and present?</Text>
+        style={styles.questionText}>Action: How can you implement this hadith in your future?</Text>
         <Input width="95%"
             alignSelf="center"
             // placeholder="Question 1 Answer" 
