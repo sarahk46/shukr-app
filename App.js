@@ -94,7 +94,7 @@ function MyTabs() {
 
 function App() {
   return (
-      <ImageBackground source={require('./BackgroundImage.png')} style={styles.image}>
+      <ImageBackground source={require('./v1BackgroundImage.png')} style={styles.image}>
         <NavigationContainer theme={navTheme}>
           <MyTabs />
         </NavigationContainer>
