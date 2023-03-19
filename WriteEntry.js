@@ -5,7 +5,7 @@ import { useState } from 'react';
 import HadithCard from './HadithCard';
 import ScreenWrapper from './ScreenWrapper';
 
-function WriteEntry() {
+function WriteEntry({ navigation }) {
   const [responseA, setResponseA] = useState('');
   const [responseB, setResponseB] = useState('');
   const [responseC, setResponseC] = useState('');
@@ -21,10 +21,8 @@ function WriteEntry() {
   };
 
   // button that appears after Submit to take you to View Entries page
-  const navigation = useNavigation();
-
   const handlePress = () => {
-    navigation.navigate('Journal');
+    navigation.navigate('Your Journal');
   };
 
   return (

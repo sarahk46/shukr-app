@@ -13,6 +13,7 @@ import ViewEntry from './ViewEntry.js';
 
 
 const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 // For the background image:
 // https://stackoverflow.com/questions/54599305/how-to-set-background-image-with-react-native-and-react-navigation
 
@@ -98,7 +99,9 @@ function App() {
     <NativeBaseProvider>
       <ImageBackground source={require('./v1BackgroundImage.png')} style={styles.backgroundImage}>
         <NavigationContainer theme={navTheme}>
-          <MyTabs />
+          <Stack.Navigator>
+            <Stack.Screen name="Main" component={MyTabs} />
+          </Stack.Navigator>
         </NavigationContainer>
       </ImageBackground>
     </NativeBaseProvider>
