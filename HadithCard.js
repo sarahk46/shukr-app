@@ -1,5 +1,4 @@
 import { Box, Text, Button, } from 'native-base';
-import { StyleSheet } from 'react-native';
 import styles from './styles';
 
 function displayButton(isHomeCard) {
@@ -13,7 +12,6 @@ function displayButton(isHomeCard) {
 }
 // We should also probably accept a hadithInfo variable to decide what to display in terms of text
 function HadithCard({ isHomeCard }) {
-    console.log(StyleSheet.flatten(styles.hadithBox));
     return (
         <Box style={styles.hadithBox}>
             <Text bold style={styles.title}>HADITH OF THE DAY</Text>

@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
       elevation: 5,
       alignItems: 'center',
     },
+
     questionDivider: {
       width: '95%',
       alignSelf: "center",
@@ -65,6 +66,7 @@ const styles = StyleSheet.create({
       fontSize: 18,
       color: "#A3A3A3",
     },
+
     title: {
       // fontFamily: 'Open Sans',
       // fontSize: '50xl',
@@ -92,6 +94,7 @@ const styles = StyleSheet.create({
       textAlign: 'center',
       marginTop: 5,
     },
+    
     button: {
       backgroundColor: '#F2CC8F',
       // borderRadius: 4,

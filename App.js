@@ -1,6 +1,6 @@
 import { ImageBackground, StyleSheet } from 'react-native';
 import { DefaultTheme, NavigationContainer } from '@react-navigation/native';
-import { extendTheme, NativeBaseProvider} from 'native-base';
+import { NativeBaseProvider} from 'native-base';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from './Home.js';
 import Journal from './Journal.js';
@@ -12,7 +12,6 @@ import ViewEntry from './ViewEntry.js';
 
 
 const Tab = createBottomTabNavigator();
-const iconSize = 36;
 // For the background image:
 // https://stackoverflow.com/questions/54599305/how-to-set-background-image-with-react-native-and-react-navigation
 
