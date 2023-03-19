@@ -1,7 +1,8 @@
 import styles from './styles';
-import { Box, Heading, Text, NativeBaseProvider, Divider, Stack, Input, Button, ScrollView } from 'native-base';
+import { Box, Heading, Text, Divider, Stack, Input, Button, ScrollView } from 'native-base';
 import { useState, useEffect } from 'react';
 import HadithCard from './HadithCard';
+import ScreenWrapper from './ScreenWrapper';
 
 function WriteEntry() {
   return (
@@ -13,7 +14,7 @@ function WriteEntry() {
     // Gotta also add scrollview and account for lack of button in styling
     // Consideration: Need to also scroll all the way to the bottom
     // Some issues in the text display
-    <NativeBaseProvider>
+    <ScreenWrapper>
       <ScrollView>
         <HadithCard/>
         <Heading size="md" alignSelf="center" marginTop="4" marginBottom="2">Reflection</Heading>
@@ -36,7 +37,7 @@ function WriteEntry() {
                 placeholder="Write your thoughts here!"
                 multiline={true}
                 style={styles.entryInput}
-                 />
+                  />
               <Divider style={styles.questionDivider}/>
 
               <Text style={styles.questionText}>How can you implement this hadith in your future?</Text>
@@ -53,8 +54,7 @@ function WriteEntry() {
               </Button>
         </Stack>
       </ScrollView>
-
-  </NativeBaseProvider>
+    </ScreenWrapper>
   );
 }
 

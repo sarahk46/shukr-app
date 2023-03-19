@@ -1,8 +1,9 @@
-import { Text, Button, NativeBaseProvider, Stack, View, Divider, ScrollView } from 'native-base';
+import { Text, Button, Stack, View, Divider, ScrollView } from 'native-base';
 import {Image} from 'react-native';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import HadithCard from './HadithCard';
+import ScreenWrapper from './ScreenWrapper';
 
 // TODO: Figure out redirection w/ "Reflect Now" to WriteEntry page
 // NavigationContainer should be a part of the solution -- read more here: 
@@ -45,14 +46,12 @@ function Home({ navigation }) {
   }, []);
 
   return (
-    <NativeBaseProvider>
-    <ScrollView>
-      <HadithCard isHomeCard={true}/>
-      {displayComingSoon()}
-    </ScrollView>
-
-  </NativeBaseProvider>
-
+    <ScreenWrapper>
+      <ScrollView>
+        <HadithCard isHomeCard={true}/>
+        {displayComingSoon()}
+      </ScrollView>
+    </ScreenWrapper>
   );
 }
 
