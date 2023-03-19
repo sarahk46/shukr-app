@@ -1,5 +1,6 @@
 import { ImageBackground, StyleSheet } from 'react-native';
 import { DefaultTheme, NavigationContainer } from '@react-navigation/native';
+import { NativeBaseProvider} from 'native-base';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from './Home.js';
 import Journal from './Journal.js';
@@ -11,9 +12,9 @@ import ViewEntry from './ViewEntry.js';
 
 
 const Tab = createBottomTabNavigator();
-const iconSize = 36;
 // For the background image:
 // https://stackoverflow.com/questions/54599305/how-to-set-background-image-with-react-native-and-react-navigation
+
 const navTheme = {
   ...DefaultTheme,
   colors: {
@@ -24,13 +25,13 @@ const navTheme = {
 
 function MyTabs() {
   return (
-    <Tab.Navigator initialRouteName='Salam!' 
+    <Tab.Navigator initialRouteName='Home' 
       screenOptions={({ route }) => ({
           tabBarStyle: { backgroundColor: '#3d405b'},
           headerShown: false,
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
-            if (route.name === 'Salam!') {
+            if (route.name === 'Home') {
               iconName = focused
                 ? 'home'
                 : 'home-outline';
@@ -51,7 +52,7 @@ function MyTabs() {
         })}
       
       >
-      <Tab.Screen name="Salam!" 
+      <Tab.Screen name="Home" 
         component={Home} 
         options={{
           tabBarLabel: 'Home',
@@ -92,11 +93,13 @@ function MyTabs() {
 
 function App() {
   return (
-      <ImageBackground source={require('./v1BackgroundImage.png')} style={styles.image}>
+    <NativeBaseProvider>
+      <ImageBackground source={require('./v1BackgroundImage.png')} style={styles.backgroundImage}>
         <NavigationContainer theme={navTheme}>
           <MyTabs />
         </NavigationContainer>
       </ImageBackground>
+    </NativeBaseProvider>
   );
 }
 
@@ -105,7 +108,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#3D405B',
     color: '#3D405B',
   },
-  image: {
+  backgroundImage: {
     flex: 1,
     justifyContent: 'center',
     flexDirection: 'column',
