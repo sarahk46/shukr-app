@@ -4,12 +4,13 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import HadithCard from './HadithCard';
 import ScreenWrapper from './ScreenWrapper';
+import Journal from './Journal.js';
+import WriteEntry from './WriteEntry.js';
 
 // TODO: Figure out redirection w/ "Reflect Now" to WriteEntry page
 // NavigationContainer should be a part of the solution -- read more here: 
 // https://reactnavigation.org/docs/navigating
 // The packages for this are installed btw here
-
 
 const fetchHadiths = async (hadithUrls) => {
   const hadiths = [];

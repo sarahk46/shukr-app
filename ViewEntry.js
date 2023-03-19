@@ -21,7 +21,7 @@ function ViewEntry() {
               <Text style={styles.questionText}>Action: How can you implement this hadith in your future?</Text>
               <Box style={styles.viewEntryText}/>
   
-              <Button style={styles.button} variant="solid" _text={{color: "#fffff"}}>
+              <Button style={styles.button} variant="solid" _text={{color: "#3D405B"}}>
               Submit
               </Button>
         </Stack>

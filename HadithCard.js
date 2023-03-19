@@ -4,7 +4,7 @@ import styles from './styles';
 function displayButton(isHomeCard) {
     if (isHomeCard) {
         return (
-            <Button style={styles.button} variant="solid" _text={{color: "#fffff"}}>
+            <Button style={styles.button} variant="solid" _text={{color: "#3D405B"}}>
                 Reflect Now!
             </Button>
         );
