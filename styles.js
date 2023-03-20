@@ -106,6 +106,16 @@ const styles = StyleSheet.create({
       borderRadius: 30,
       textDecorationColor: '#fff',
     },
+    writeEntryButton: {
+      alignSelf: "center",
+      width: 350,
+      height: 60,
+      marginTop: 4,
+      backgroundColor: '#F2CC8F',
+      variant: "solid",
+      textDecorationColor: '#3D405B',
+      borderRadius: "30"
+    },
     journalEntryButton: {
       backgroundColor: '#F4F1DE',
       borderRadius: 30,

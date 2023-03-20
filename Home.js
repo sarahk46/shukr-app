@@ -48,7 +48,7 @@ function Home({ navigation }) {
   return (
     <ScreenWrapper>
       <ScrollView>
-        <HadithCard isHomeCard={true}/>
+        <HadithCard isHomeCard={true} navigation={navigation}/>
         {displayComingSoon()}
       </ScrollView>
     </ScreenWrapper>

@@ -1,7 +1,10 @@
+import 'react-native-gesture-handler';
+
 import { ImageBackground, StyleSheet } from 'react-native';
 import { DefaultTheme, NavigationContainer } from '@react-navigation/native';
 import { NativeBaseProvider} from 'native-base';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createStackNavigator } from '@react-navigation/stack';
 import Home from './Home.js';
 import Journal from './Journal.js';
 import WriteEntry from './WriteEntry.js';
@@ -9,8 +12,10 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 // This is just for testing
 import WriteEntryPart1 from './WriteEntryPart1.js';
 import ViewEntry from './ViewEntry.js';
-
-
+import WriteEntryPause from './WriteEntryPause.js';
+import WriteEntryQ1 from './WriteEntryQ1.js';
+import WriteEntryQ2 from './WriteEntryQ2.js';
+import WriteEntryQ3 from './WriteEntryQ3.js';
 const Tab = createBottomTabNavigator();
 // For the background image:
 // https://stackoverflow.com/questions/54599305/how-to-set-background-image-with-react-native-and-react-navigation
@@ -22,6 +27,64 @@ const navTheme = {
     background: 'transparent',
   },
 };
+
+const JournalStack = createStackNavigator();
+function JournalStackScreen() {
+  return (
+    <JournalStack.Navigator>
+      <JournalStack.Screen name = "Journal" component = {Journal}
+        options={{
+        header: ({ navigation }) => null // This will hide the header, but you can also pass in a custom header component that receives the navigation prop
+      }}
+      />
+      <JournalStack.Screen name = "View an Entry" component = {ViewEntry}
+        options={{
+        header: ({ navigation }) => null // This will hide the header, but you can also pass in a custom header component that receives the navigation prop
+      }}
+      />
+    </JournalStack.Navigator>
+  );
+}
+
+const HomeStack = createStackNavigator();
+function HomeStackScreen() {
+  return (
+    <HomeStack.Navigator>
+      <HomeStack.Screen name = "Home Page" component = {Home}
+        options={{
+        header: ({ navigation }) => null // This will hide the header, but you can also pass in a custom header component that receives the navigation prop
+      }}
+      />
+    </HomeStack.Navigator>
+  );
+}
+
+const WriteEntryStack = createStackNavigator();
+function WriteEntryStackScreen() {
+  return (
+    <WriteEntryStack.Navigator>
+      <WriteEntryStack.Screen name = "Pause and Reflect" component = {WriteEntryPause}
+        options={{
+        header: ({ navigation }) => null // This will hide the header, but you can also pass in a custom header component that receives the navigation prop
+      }}
+      />
+      <WriteEntryStack.Screen name = "Question 1" component = {WriteEntryQ1}
+        options={{
+        header: ({ navigation }) => null // This will hide the header, but you can also pass in a custom header component that receives the navigation prop
+      }}/>
+      <WriteEntryStack.Screen name = "Question 2" component = {WriteEntryQ2}
+        options={{
+        header: ({ navigation }) => null // This will hide the header, but you can also pass in a custom header component that receives the navigation prop
+      }}
+      />
+      <WriteEntryStack.Screen name = "Question 3" component = {WriteEntryQ3}
+        options={{
+        header: ({ navigation }) => null // This will hide the header, but you can also pass in a custom header component that receives the navigation prop
+      }}
+      />
+    </WriteEntryStack.Navigator>
+  );
+}
 
 function MyTabs() {
   return (
@@ -53,7 +116,7 @@ function MyTabs() {
       
       >
       <Tab.Screen name="Home" 
-        component={Home} 
+        component={HomeStackScreen} 
         options={{
           tabBarLabel: 'Home',
           // If want to do the header:
@@ -68,7 +131,7 @@ function MyTabs() {
           // tabBarInactiveTintColor: 'grey'
         }}/>
       <Tab.Screen name="Write an Entry" 
-          component={WriteEntry}
+          component={WriteEntryStackScreen}
           options={{
           tabBarLabel: 'Write an Entry',
           // tabBarLabelStyle: {color: '#F2CC8F'},
@@ -78,7 +141,7 @@ function MyTabs() {
           }}
       />
       <Tab.Screen name="Your Journal" 
-          component={Journal} 
+          component={JournalStackScreen} 
           options={{
           tabBarLabel: 'Your Journal',
           // tabBarLabelStyle: {color: '#F2CC8F'},

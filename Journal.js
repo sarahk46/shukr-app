@@ -3,7 +3,6 @@ import EntryItem from './EntryItem';
 import styles from './styles';
 import HadithCard from './HadithCard';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
-import ViewEntry from './ViewEntry';
 import ScreenWrapper from './ScreenWrapper';
 
 function journalEntryButton(dateToDisplay) {
@@ -28,7 +27,13 @@ function Journal({ navigation }) {
   return (
     <ScreenWrapper>
       <ScrollView>
-        {journalEntryButton("March 14, 2023")}
+        <Pressable style={styles.journalEntryButton} onPress={() =>
+            navigation.navigate('View an Entry', {
+            date: 'March 15',
+          })}>
+          <Text marginLeft="15" fontSize="16">March 14 </Text>
+          <ChevronRightIcon marginRight="3" size="5"/>
+      </Pressable>
         {/* {journalEntryButton("March 13, 2023", navigation)} */}
         {/* {journalEntryButton("March 12, 2023")} */}
       </ScrollView>

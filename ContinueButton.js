@@ -1,20 +1,38 @@
 import { Button } from 'native-base';
+import styles from './styles';
 
-function ContinueButton() {
-    return (
-        <Button 
-        alignSelf="center"
-        width="278"
-        height="20"
-        // marginTop=""
-        marginTop="4"
-        backgroundColor='#F2CC8F' 
-        variant="solid"
-        _text={{color: "#3D405B", fontSize: "24"}}
-        borderRadius="30">
-                Continue
-        </Button>
-    );
+
+function ContinueButton({type, navigation}) {
+    console.log(navigation);
+    if (type != "Question 3") {
+        return (
+            <Button 
+            style={styles.writeEntryButton}
+            _text={{color: "#3D405B", fontSize: "24"}}
+            onPress={ () => {
+                if (type === "Pause") {
+                    navigation.navigate("Question 1");
+                } else if (type === "Question 1") {
+                    navigation.navigate("Question 2");
+                } else if (type === "Question 2") {
+                    navigation.navigate("Question 3");
+                }
+            }}>
+                    Continue
+            </Button>
+        );
+
+    } else {
+        return (
+            <Button 
+            style={styles.writeEntryButton}
+            _text={{color: "#3D405B", fontSize: "24"}}
+            onPress={() => navigation.navigate('Your Journal')}>
+                    Submit
+            </Button>
+        );
+    }
+
 
 }
 
