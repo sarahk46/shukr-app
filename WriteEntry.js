@@ -1,14 +1,33 @@
 import styles from './styles';
-import { Box, Heading, Text, Divider, Stack, Input, Button, ScrollView } from 'native-base';
-import { useState, useEffect } from 'react';
+import { Heading, Text, Divider, Stack, Input, Button, ScrollView, Modal } from 'native-base';
+import { useState } from 'react';
 import HadithCard from './HadithCard';
 import ScreenWrapper from './ScreenWrapper';
 
-function WriteEntry() {
+function WriteEntry({ navigation }) {
+  const [responseA, setResponseA] = useState('');
+  const [responseB, setResponseB] = useState('');
+  const [responseC, setResponseC] = useState('');
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleSubmission = () => {
+    // Save the submitted values to a database or store them in memory
+    // make object with date, hadith, responses and store it as an entry
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
+  // button that appears after Submit to take you to View Entries page
+  const handlePress = () => {
+    navigation.navigate('Your Journal');
+  };
+
   return (
     // Need to check on actual Expo Go app on iPhone
     // First display hadith box on the page
-    // TODO: Probably separate out the hadith card in its own component
     // Second display the actual questions -- need to figure out styling in separate area
     // Maybe want a box for each question + answer too
     // Gotta also add scrollview and account for lack of button in styling
@@ -27,6 +46,8 @@ function WriteEntry() {
                 placeholder="Write your thoughts here!"
                 multiline={true}
                 style={styles.entryInput}
+                value={responseA}
+                onChangeText={setResponseA}
               />
               <Divider style={styles.questionDivider}/>
 
@@ -37,6 +58,8 @@ function WriteEntry() {
                 placeholder="Write your thoughts here!"
                 multiline={true}
                 style={styles.entryInput}
+                value={responseB}
+                onChangeText={setResponseB}
                   />
               <Divider style={styles.questionDivider}/>
 
@@ -46,12 +69,25 @@ function WriteEntry() {
                 // placeholder="Question 3 Answer" 
                 placeholder="Write your thoughts here!"
                 multiline={true}
-                style={styles.entryInput} />
+                style={styles.entryInput}
+                value={responseC}
+                onChangeText={setResponseC}
+              />
               <Divider style={styles.questionDivider}/>
 
-              <Button style={styles.button} variant="solid" _text={{color: "#fffff"}}>
+              <Button style={styles.button} variant="solid" _text={{color: "#3D405B"}} onPress={handleSubmission}>
               Submit
               </Button>
+
+              <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
+                <Modal.Content>
+                  <Modal.CloseButton />
+                  <Modal.Header>Entry submitted!</Modal.Header>
+                  <Modal.Body>
+                    <Button style={styles.button} variant="solid" _text={{color: "#3D405B"}} onPress={handlePress}>View Journal</Button>
+                  </Modal.Body>
+                </Modal.Content>
+              </Modal>
         </Stack>
       </ScrollView>
     </ScreenWrapper>

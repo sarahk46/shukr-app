@@ -1,17 +1,19 @@
 import { Box, Text, Button, } from 'native-base';
 import styles from './styles';
 
-function displayButton(isHomeCard) {
+function displayButton(isHomeCard, navigation) {
     if (isHomeCard) {
         return (
-            <Button style={styles.button} variant="solid" _text={{color: "#fffff"}}>
+            <Button style={styles.button} variant="solid" _text={{color: "#3D405B"}}
+            // If get done with this, need to see how to pass in hadith data
+            onPress={() => navigation.navigate('Write an Entry', {screen: 'Pause and Reflect'})}>
                 Reflect Now!
             </Button>
         );
     }
 }
 // We should also probably accept a hadithInfo variable to decide what to display in terms of text
-function HadithCard({ isHomeCard }) {
+function HadithCard({ isHomeCard, navigation }) {
     return (
         <Box style={styles.hadithBox}>
             <Text bold style={styles.title}>HADITH OF THE DAY</Text>
@@ -20,7 +22,7 @@ function HadithCard({ isHomeCard }) {
             
             <Text style={styles.hadithTextEnglish}>Narrated Sahl bin Sa`d: The Prophet (ﷺ) said, "A single endeavor in Allah's Cause in the afternoon and in the forenoon is better than the world and whatever is in it.”</Text>
             <Text style={styles.citationText}> (Bukhari, 2794) </Text>
-            {displayButton(isHomeCard)}
+            {displayButton(isHomeCard, navigation)}
         </Box>
     );
 }

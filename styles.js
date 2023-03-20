@@ -95,6 +95,7 @@ const styles = StyleSheet.create({
       marginTop: 5,
     },
     
+    // Buttons
     button: {
       backgroundColor: '#F2CC8F',
       // borderRadius: 4,
@@ -105,6 +106,19 @@ const styles = StyleSheet.create({
       marginTop: 20,
       borderRadius: 30,
       textDecorationColor: '#fff',
+    },
+    iconButton: {
+      backgroundColor: '#F2CC8F',
+      fontSize: 20,
+      borderRadius: 30,
+      textDecorationColor: '#fff',
+    },
+    writeEntryButton: {
+      marginTop: 4,
+      backgroundColor: '#F2CC8F',
+      variant: "solid",
+      textDecorationColor: '#3D405B',
+      borderRadius: 30
     },
     journalEntryButton: {
       backgroundColor: '#F4F1DE',
