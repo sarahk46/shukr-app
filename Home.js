@@ -1,4 +1,4 @@
-import { Text, Button, Stack, View, Divider, ScrollView } from 'native-base';
+import { Text, View, ScrollView } from 'native-base';
 import {Image} from 'react-native';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';

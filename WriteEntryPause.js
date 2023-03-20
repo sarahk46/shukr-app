@@ -1,6 +1,4 @@
-import { Text, Button, NativeBaseProvider, ChevronLeftIcon, CloseIcon, Input, Stack, View, Divider, ScrollView } from 'native-base';
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import { Text, Button, CloseIcon, View, ScrollView } from 'native-base';
 import HadithCard from './HadithCard';
 import ContinueButton from './ContinueButton';
 import styles from './styles';
@@ -10,19 +8,15 @@ import ScreenWrapper from './ScreenWrapper';
 // https://reactnavigation.org/docs/navigating
 // The packages for this are installed btw here
 
-
-
 function topBarWithEscOnly() {
     return(
-        <View marginTop="10"
-        marginBottom="10"
-        flexDirection="row" alignItems="center" flexWrap="wrap">
-            <Text alignSelf="center" fontSize="16" left="150" textAlign="center">March 14, 2022</Text>
+        <View
+        flexDirection="row" alignItems="center" justifyContent="space-between">
+            <Text fontSize="16">March 14, 2022</Text>
             <Button
-            left="250"
             startIcon={<CloseIcon/>}
             _icon={{color: "black"}}
-            style={styles.button}
+            style={styles.iconButton}
             />
         </View>
 

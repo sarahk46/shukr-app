@@ -1,6 +1,5 @@
 import styles from './styles';
 import { Heading, Text, Divider, Stack, Input, Button, ScrollView, Modal } from 'native-base';
-import { useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
 import HadithCard from './HadithCard';
 import ScreenWrapper from './ScreenWrapper';

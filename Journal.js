@@ -1,8 +1,6 @@
 import { ScrollView, Button, ChevronRightIcon, Heading, Text, Pressable, Stack } from 'native-base';
-import EntryItem from './EntryItem';
 import styles from './styles';
-import HadithCard from './HadithCard';
-import { NavigationContainer, useNavigation } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import ScreenWrapper from './ScreenWrapper';
 
 function journalEntryButton(dateToDisplay) {

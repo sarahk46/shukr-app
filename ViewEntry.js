@@ -1,9 +1,6 @@
-import { NativeBaseProvider, Box, ScrollView, Button, ChevronRightIcon, Heading, Text, Pressable, Stack } from 'native-base';
-import EntryItem from './EntryItem';
+import { NativeBaseProvider, Box, ScrollView, Button, Text,Stack } from 'native-base';
 import styles from './styles';
 import HadithCard from './HadithCard';
-import { useNavigation, useRoute } from '@react-navigation/native';
-
 
 // TODO: Need to accept info for displaying to the user
 function ViewEntry({ route }) {

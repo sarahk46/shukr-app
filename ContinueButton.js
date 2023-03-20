@@ -1,7 +1,6 @@
 import { Button } from 'native-base';
 import styles from './styles';
 
-
 function ContinueButton({type, navigation}) {
     console.log(navigation);
     if (type != "Question 3") {
