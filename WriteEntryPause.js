@@ -23,23 +23,19 @@ function topBarWithEscOnly() {
     );
 }
 
-
 function WriteEntryPause({ navigation }) {
   return(
-    <ScreenWrapper>
-        {topBarWithEscOnly()}
-        <ScrollView>
-            
-            <Text bold fontSize="30" color='grey' textAlign="center" marginBottom="10">Pause and Reflect</Text>
-            <HadithCard isHomeCard={false}/>
-            <Text marginTop="10" fontSize="20" textAlign="center" >Once you're done reading...</Text>
-            <ContinueButton type="Pause" navigation={navigation}/>
-        
-        </ScrollView>
+        <ScreenWrapper>
+            {topBarWithEscOnly()}
 
-
-    </ScreenWrapper>
-);
+            <ScrollView>
+                <Text bold fontSize="30" color='grey' textAlign="center" marginBottom="10">Pause and Reflect</Text>
+                <HadithCard isHomeCard={false}/>
+                <Text marginTop="10" fontSize="20" textAlign="center" >Once you're done reading...</Text>
+                <ContinueButton type="Pause" navigation={navigation}/>
+            </ScrollView>
+        </ScreenWrapper>
+    );
 }
 
 export default WriteEntryPause;

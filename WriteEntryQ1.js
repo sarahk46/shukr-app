@@ -24,7 +24,7 @@ function WriteEntryQ1({ navigation }) {
         
         </ScrollView>
     </ScreenWrapper>
-);
+    );
 }
 
 export default WriteEntryQ1;
