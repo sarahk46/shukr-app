@@ -13,6 +13,7 @@ function WriteEntry({ navigation }) {
 
   const handleSubmission = () => {
     // Save the submitted values to a database or store them in memory
+    // make object with date, hadith, responses and store it as an entry
     setIsModalOpen(true);
   };
 

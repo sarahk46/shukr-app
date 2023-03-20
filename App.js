@@ -1,8 +1,8 @@
 import { ImageBackground, StyleSheet } from 'react-native';
 import { DefaultTheme, NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
 import { NativeBaseProvider} from 'native-base';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createStackNavigator } from '@react-navigation/stack';
 import Home from './Home.js';
 import Journal from './Journal.js';
 import WriteEntry from './WriteEntry.js';
@@ -13,10 +13,8 @@ import ViewEntry from './ViewEntry.js';
 
 
 const Tab = createBottomTabNavigator();
-const Stack = createStackNavigator();
 // For the background image:
 // https://stackoverflow.com/questions/54599305/how-to-set-background-image-with-react-native-and-react-navigation
-
 
 const navTheme = {
   ...DefaultTheme,
@@ -25,6 +23,16 @@ const navTheme = {
     background: 'transparent',
   },
 };
+
+const JournalStack = createStackNavigator();
+function JournalStackScreen() {
+  return (
+    <JournalStack.Navigator>
+      <JournalStack.Screen name = "Journal" component = {Journal}/>
+      <JournalStack.Screen name = "View an Entry" component = {ViewEntry}/>
+    </JournalStack.Navigator>
+  );
+}
 
 function MyTabs() {
   return (
@@ -81,7 +89,7 @@ function MyTabs() {
           }}
       />
       <Tab.Screen name="Your Journal" 
-          component={Journal} 
+          component={JournalStackScreen} 
           options={{
           tabBarLabel: 'Your Journal',
           // tabBarLabelStyle: {color: '#F2CC8F'},
@@ -99,9 +107,7 @@ function App() {
     <NativeBaseProvider>
       <ImageBackground source={require('./v1BackgroundImage.png')} style={styles.backgroundImage}>
         <NavigationContainer theme={navTheme}>
-          <Stack.Navigator>
-            <Stack.Screen name="Main" component={MyTabs} />
-          </Stack.Navigator>
+          <MyTabs />
         </NavigationContainer>
       </ImageBackground>
     </NativeBaseProvider>
