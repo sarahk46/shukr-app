@@ -1,11 +1,24 @@
-import { Text, Input, ScrollView } from 'native-base';
+import { Text, Input, ScrollView, Button } from 'native-base';
 import HadithCard from './HadithCard';
 import ContinueButton from './ContinueButton';
 import styles from './styles';
 import ScreenWrapper from './ScreenWrapper';
 import TopBar from './TopBar';
+import React, { useContext, useState } from 'react';
+import JournalContext from './JournalContext';
 
 function WriteEntryQ2({ navigation }) {
+  const { journalEntries, setJournalEntries } = useContext(JournalContext);
+  const [response, setResponse] = useState('');
+
+  const handleContinue = () => {
+    const newEntry = {
+      question2: response,
+    };
+    setJournalEntries([...journalEntries, newEntry]);
+    navigation.navigate('Question 3');
+  };
+
   return (
     <ScreenWrapper>
         <TopBar />
@@ -18,9 +31,11 @@ function WriteEntryQ2({ navigation }) {
                 placeholder="Type your response here..."
                 multiline={true}
                 style={styles.entryInput}
+                value={response}
+                onChangeText={setResponse}
             />
 
-        <ContinueButton type="Question 2" navigation={navigation}/>
+        <Button style={styles.writeEntryButton} onPress={handleContinue}><Text>Continue</Text></Button>
         
         </ScrollView>
     </ScreenWrapper>

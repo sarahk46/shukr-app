@@ -101,8 +101,9 @@ export function TabNavigator() {
       >
       <Tab.Screen name="Home" 
         component={HomeStackScreen} 
-        options={{
+        options={({ navigation }) => ({
           tabBarLabel: 'Home',
+          navigation: navigation,
           // If want to do the header:
           // headerShown: true,
           // headerTintColor: '#F2CC8F',
@@ -113,26 +114,28 @@ export function TabNavigator() {
           // ),
           // tabBarActiveTintColor: '#F2CC8F',
           // tabBarInactiveTintColor: 'grey'
-        }}/>
+        })}/>
       <Tab.Screen name="Write an Entry" 
           component={WriteEntryStackScreen}
-          options={{
+          options={({ navigation }) => ({
           tabBarLabel: 'Write an Entry',
+          navigation: navigation,
           // tabBarLabelStyle: {color: '#F2CC8F'},
           // tabBarIcon: ({ color, size }) => (
           //   <MaterialCommunityIcons name="pen-plus" color={'#F2CC8F'} size={iconSize} />
           // ),
-          }}
+          })}
       />
       <Tab.Screen name="Your Journal" 
           component={JournalStackScreen} 
-          options={{
+          options={({ navigation }) => ({
           tabBarLabel: 'Your Journal',
+          navigation: navigation,
           // tabBarLabelStyle: {color: '#F2CC8F'},
           // tabBarIcon: ({ color, size }) => (
           //   <MaterialCommunityIcons name="notebook" color={'#F2CC8F'} size={iconSize} />
           // ),
-          }}
+          })}
       />
     </Tab.Navigator>
   );

@@ -1,5 +1,6 @@
 import 'react-native-gesture-handler';
 
+import React, { useState } from 'react';
 import { ImageBackground, StyleSheet } from 'react-native';
 import { DefaultTheme, NavigationContainer } from '@react-navigation/native';
 import { NativeBaseProvider} from 'native-base';
@@ -14,6 +15,7 @@ import WriteEntryQ1 from './WriteEntryQ1.js';
 import WriteEntryQ2 from './WriteEntryQ2.js';
 import WriteEntryQ3 from './WriteEntryQ3.js';
 import {TabNavigator} from './Navigators';
+import JournalContext from './JournalContext';
 
 // For the background image:
 // https://stackoverflow.com/questions/54599305/how-to-set-background-image-with-react-native-and-react-navigation
@@ -27,13 +29,17 @@ const navTheme = {
 };
 
 function App() {
+  const [journalEntries, setJournalEntries] = useState([]);
+
   return (
     <NativeBaseProvider>
-      <ImageBackground source={require('./v1BackgroundImage.png')} style={styles.backgroundImage}>
-        <NavigationContainer theme={navTheme}>
-          <TabNavigator />
-        </NavigationContainer>
-      </ImageBackground>
+      <JournalContext.Provider value={{ journalEntries, setJournalEntries }}>
+        <ImageBackground source={require('./v1BackgroundImage.png')} style={styles.backgroundImage}>
+          <NavigationContainer theme={navTheme}>
+            <TabNavigator />
+          </NavigationContainer>
+        </ImageBackground>
+      </JournalContext.Provider>
     </NativeBaseProvider>
   );
 }
