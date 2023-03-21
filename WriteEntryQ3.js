@@ -7,16 +7,14 @@ import TopBar from './TopBar';
 import React, { useContext, useState } from 'react';
 import JournalContext from './JournalContext';
 
-function WriteEntryQ3({ navigation }) {
+function WriteEntryQ3({ navigation, route }) {
   const { journalEntries, setJournalEntries } = useContext(JournalContext);
   const [response, setResponse] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleSubmission = () => {
-    const newEntry = {
-      question2: response,
-    };
-    setJournalEntries([...journalEntries, newEntry]);
+    const entry = {...route.params.responses, question3: response};
+    setJournalEntries([...journalEntries, entry]);
     setIsModalOpen(true);
   };
 

@@ -7,16 +7,15 @@ import TopBar from './TopBar';
 import React, { useContext, useState } from 'react';
 import JournalContext from './JournalContext';
 
-function WriteEntryQ2({ navigation }) {
-  const { journalEntries, setJournalEntries } = useContext(JournalContext);
+function WriteEntryQ2({ navigation, route }) {
   const [response, setResponse] = useState('');
 
   const handleContinue = () => {
-    const newEntry = {
-      question2: response,
-    };
-    setJournalEntries([...journalEntries, newEntry]);
-    navigation.navigate('Question 3');
+    const responses = {...route.params.responses, question2: response };
+    
+    navigation.navigate('Question 3', {
+        responses
+      });
   };
 
   return (

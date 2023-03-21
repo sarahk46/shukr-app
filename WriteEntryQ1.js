@@ -8,15 +8,14 @@ import React, { useContext, useState } from 'react';
 import JournalContext from './JournalContext';
 
 function WriteEntryQ1({ navigation }) {
-  const { journalEntries, setJournalEntries } = useContext(JournalContext);
+  // iniitalize question 1 response
   const [response, setResponse] = useState('');
 
   const handleContinue = () => {
-    const newEntry = {
-      question1: response,
-    };
-    setJournalEntries([...journalEntries, newEntry]);
-    navigation.navigate('Question 2');
+    const responses = {question1: response};
+    navigation.navigate('Question 2', {
+        responses
+      });
   };
 
   return (
