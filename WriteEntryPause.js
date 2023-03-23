@@ -32,7 +32,7 @@ function WriteEntryPause({ navigation }) {
                 <Text bold fontSize="30" color='grey' textAlign="center" marginBottom="10">Pause and Reflect</Text>
                 <HadithCard isHomeCard={false}/>
                 <Text marginTop="10" fontSize="20" textAlign="center" >Once you're done reading...</Text>
-                <Button style={styles.writeEntryButton} onPress={navigation.navigate('Question 1')}>
+                <Button style={styles.writeEntryButton} onPress={() =>navigation.navigate('Question 1')}>
                     <Text>Continue</Text>
                 </Button>
             </ScrollView>

@@ -7,6 +7,7 @@ function displayButton(isHomeCard, navigation) {
             <Button style={styles.button} variant="solid" _text={{color: "#3D405B"}}
             // If get done with this, need to see how to pass in hadith data
             onPress={() => navigation.navigate('Write an Entry', {screen: 'Pause and Reflect'})}>
+            {/* // onPress={() => navigation.navigate('Write an Entry', {screen: 'Question 1'})}> */}
                 Reflect Now!
             </Button>
         );
