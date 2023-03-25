@@ -29,7 +29,8 @@ function WriteEntryQ3({ navigation, route }) {
 
   return (
     <ScreenWrapper>
-        <TopBar />
+        <TopBar navigation={navigation} backTo={'Question 2'} date = {'March 14, 2022'}
+        />
         <ScrollView>
             <HadithCard isHomeCard={false}/>
             <Text 

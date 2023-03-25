@@ -8,7 +8,7 @@ import ScreenWrapper from './ScreenWrapper';
 // https://reactnavigation.org/docs/navigating
 // The packages for this are installed btw here
 
-function topBarWithEscOnly() {
+function topBarWithEscOnly(navigation) {
     return(
         <View
         flexDirection="row" alignItems="center" justifyContent="space-between">
@@ -17,6 +17,7 @@ function topBarWithEscOnly() {
             startIcon={<CloseIcon/>}
             _icon={{color: "black"}}
             style={styles.iconButton}
+            onPress={() => navigation.navigate('Home')}
             />
         </View>
 
@@ -26,7 +27,7 @@ function topBarWithEscOnly() {
 function WriteEntryPause({ navigation }) {
   return(
         <ScreenWrapper>
-            {topBarWithEscOnly()}
+            {topBarWithEscOnly(navigation)}
 
             <ScrollView>
                 <Text bold fontSize="30" color='grey' textAlign="center" marginBottom="10">Pause and Reflect</Text>
