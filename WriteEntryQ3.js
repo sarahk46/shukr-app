@@ -25,6 +25,7 @@ function WriteEntryQ3({ navigation, route }) {
   // button that appears after Submit to take you to View Entries page
   const handlePress = () => {
     navigation.navigate('Your Journal');
+    setIsModalOpen(false);
   };
 
   return (
