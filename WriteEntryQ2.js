@@ -20,7 +20,7 @@ function WriteEntryQ2({ navigation, route }) {
 
   return (
     <ScreenWrapper>
-        <TopBar navigation={navigation} backTo={'Question 1'} date = {'March 14, 2022'}
+        <TopBar navigation={navigation} backTo={'Question 1'} exit={'Pause and Reflect'} date = {'March 14, 2022'}
         />
         <ScrollView>
             <HadithCard isHomeCard={false}/>

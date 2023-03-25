@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './styles';
 
 // with back and esc
-function TopBar({navigation, backTo, date}) {
+function TopBar({navigation, backTo, exit, date}) {
     return(
         // justify content disperses child objects evenly
         <View flexDirection="row" alignItems="center" justifyContent="space-between" marginBottom="5">
@@ -20,7 +20,7 @@ function TopBar({navigation, backTo, date}) {
                 startIcon={<CloseIcon/>}
                 _icon={{color: "black"}}
                 style={styles.iconButton}
-                onPress={() => navigation.navigate('Home')}
+                onPress={() => navigation.navigate(exit)}
             />
         </View>
 
