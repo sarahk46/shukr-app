@@ -8,7 +8,7 @@ import ScreenWrapper from './ScreenWrapper';
 // https://reactnavigation.org/docs/navigating
 // The packages for this are installed btw here
 
-function topBarWithEscOnly() {
+function topBarWithEscOnly(navigation) {
     return(
         <View
         flexDirection="row" alignItems="center" justifyContent="space-between">
@@ -17,29 +17,28 @@ function topBarWithEscOnly() {
             startIcon={<CloseIcon/>}
             _icon={{color: "black"}}
             style={styles.iconButton}
+            onPress={() => navigation.navigate('Home')}
             />
         </View>
 
     );
 }
 
-
 function WriteEntryPause({ navigation }) {
   return(
-    <ScreenWrapper>
-        {topBarWithEscOnly()}
-        <ScrollView>
-            
-            <Text bold fontSize="30" color='grey' textAlign="center" marginBottom="10">Pause and Reflect</Text>
-            <HadithCard isHomeCard={false}/>
-            <Text marginTop="10" fontSize="20" textAlign="center" >Once you're done reading...</Text>
-            <ContinueButton type="Pause" navigation={navigation}/>
-        
-        </ScrollView>
+        <ScreenWrapper>
+            {topBarWithEscOnly(navigation)}
 
-
-    </ScreenWrapper>
-);
+            <ScrollView>
+                <Text bold fontSize="30" color='grey' textAlign="center" marginBottom="10">Pause and Reflect</Text>
+                <HadithCard isHomeCard={false}/>
+                <Text marginTop="10" fontSize="20" textAlign="center" >Once you're done reading...</Text>
+                <Button style={styles.writeEntryButton} onPress={() =>navigation.navigate('Question 1')}>
+                    <Text>Continue</Text>
+                </Button>
+            </ScrollView>
+        </ScreenWrapper>
+    );
 }
 
 export default WriteEntryPause;

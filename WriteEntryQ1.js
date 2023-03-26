@@ -1,14 +1,27 @@
-import { Text, Input, ScrollView } from 'native-base';
+import { Text, Input, ScrollView, Button } from 'native-base';
 import HadithCard from './HadithCard';
 import ContinueButton from './ContinueButton';
 import styles from './styles';
 import ScreenWrapper from './ScreenWrapper';
 import TopBar from './TopBar';
+import React, { useContext, useState } from 'react';
+import JournalContext from './JournalContext';
 
 function WriteEntryQ1({ navigation }) {
+  // iniitalize question 1 response
+  const [response, setResponse] = useState('');
+
+  const handleContinue = () => {
+    const responses = {question1: response};
+    navigation.navigate('Question 2', {
+        responses
+      });
+  };
+
   return (
     <ScreenWrapper>
-        <TopBar />
+        <TopBar navigation={navigation} backTo={'Pause and Reflect'} exit={'Pause and Reflect'} date = {'March 14, 2022'}
+        />
         <ScrollView>
             <HadithCard isHomeCard={false}/>
             <Text 
@@ -17,14 +30,16 @@ function WriteEntryQ1({ navigation }) {
                 placeholder="Type your response here..."
                 multiline={true}
                 style={styles.entryInput}
+                value={response}
+                onChangeText={setResponse}
             />
 
-            <ContinueButton type="Question 1" navigation={navigation}/>
+            <Button style={styles.writeEntryButton} onPress={handleContinue}><Text>Continue</Text></Button>
 
         
         </ScrollView>
     </ScreenWrapper>
-);
+    );
 }
 
 export default WriteEntryQ1;

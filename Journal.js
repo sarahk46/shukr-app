@@ -2,6 +2,8 @@ import { ScrollView, Button, ChevronRightIcon, Heading, Text, Pressable, Stack }
 import styles from './styles';
 import { useNavigation } from '@react-navigation/native';
 import ScreenWrapper from './ScreenWrapper';
+import React, { useContext } from 'react';
+import JournalContext from './JournalContext';
 
 function journalEntryButton(dateToDisplay) {
   const navigation = useNavigation();
@@ -16,22 +18,34 @@ function journalEntryButton(dateToDisplay) {
   );
 }
 
+// Should take in the entire journalEntries and create a mapping function
+// for each entry
+// ViewEntry will take in a single entry 
+
 
 // TODO: Before release, would need to also accept
 // a list of data of all entries where for each entry, also includes
 // data of answers for each question
 // Renders an EntryItem for each entry
 function Journal({ navigation }) {
+  const { journalEntries } = useContext(JournalContext);
   return (
     <ScreenWrapper>
       <ScrollView>
-        <Pressable style={styles.journalEntryButton} onPress={() =>
-            navigation.navigate('View an Entry', {
-            date: 'March 15',
-          })}>
-          <Text marginLeft="15" fontSize="16">March 14 </Text>
-          <ChevronRightIcon marginRight="3" size="5"/>
-      </Pressable>
+          {journalEntries?.map((entry, index) => (
+            <Stack key={index} direction="column" space={3} /* key={entry.id} */ >
+              {/* <Text>{entry.date}</Text> */}
+                <Pressable style={styles.journalEntryButton} onPress={() =>
+                  navigation.navigate('View an Entry', {
+                  date: 'March 15',  // get entryDate here and in the actual text too
+                  entry,
+                })}>
+                <Text marginLeft="15" fontSize="16">March 14</Text>
+                <ChevronRightIcon marginRight="3" size="5"/>
+                </Pressable>
+            </Stack>
+          ))}
+        
         {/* {journalEntryButton("March 13, 2023", navigation)} */}
         {/* {journalEntryButton("March 12, 2023")} */}
       </ScrollView>
