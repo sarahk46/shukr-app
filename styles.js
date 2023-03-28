@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     entryInput: {
       width: 200,
       alignSelf: "center",
-      height: 150,
+      minHeight: 150,
       variant: "outline",
       multiline: true,
       backgroundColor: "#F4F1DE",
@@ -57,9 +57,7 @@ const styles = StyleSheet.create({
       color: "#A3A3A3",
     },
     viewEntryText: {
-      width: 375,
-      alignSelf: "center",
-      height: 250,
+      minHeight: 150,
       variant: "outline",
       multiline: true,
       backgroundColor: "#F4F1DE",
@@ -67,6 +65,7 @@ const styles = StyleSheet.create({
       color: "#A3A3A3",
     },
 
+    // Text
     title: {
       // fontFamily: 'Open Sans',
       // fontSize: '50xl',
@@ -94,6 +93,14 @@ const styles = StyleSheet.create({
       textAlign: 'center',
       marginTop: 5,
     },
+    dateTitle: {
+      // fontFamily: 'Open Sans',
+      // fontSize: '50xl',
+      // textAlign: 'center',
+      marginBottom: 20,
+      marginLeft: 10,
+      fontSize: 22,
+    },
     
     // Buttons
     button: {
@@ -105,13 +112,13 @@ const styles = StyleSheet.create({
       fontSize: 20,
       marginTop: 20,
       borderRadius: 30,
-      textDecorationColor: '#fff',
+      textDecorationColor: '#3D405B',
     },
     iconButton: {
       backgroundColor: '#F2CC8F',
       fontSize: 20,
       borderRadius: 30,
-      textDecorationColor: '#fff',
+      textDecorationColor: '#3D405B',
     },
     writeEntryButton: {
       marginTop: 4,
@@ -133,6 +140,12 @@ const styles = StyleSheet.create({
       // flex: "2",
       justifyContent: "space-between",
     },
+
+    floatBottomRight: {
+      position: 'absolute',
+      bottom: 20,
+      right: 20,
+    }
   });
   
 
