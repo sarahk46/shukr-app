@@ -1,5 +1,16 @@
 import { StyleSheet } from 'react-native';
 
+import * as Font from 'expo-font';
+
+// Load the font asynchronously
+async function loadFonts() {
+  await Font.loadAsync({
+    'Open Sans': require('./assets/fonts/Open_Sans/OpenSans-VariableFont_wdth,wght.ttf'),
+  });
+}
+
+// loadFonts();
+
 const styles = StyleSheet.create({
     // container: {
     //   flex: 1,
@@ -81,12 +92,17 @@ const styles = StyleSheet.create({
       marginLeft: 10,
     },
     pauseTitle: {
-      marginBottom: 20,
-      marginTop: 20,
-      paddingTop: 20,
+      // fontFamily: 'Open Sans',
+      marginBottom: 30,
       fontSize: 30,
-      marginLeft: 10,
-      alignSelf: 'stretch',
+      paddingTop: 20,
+      textAlign: 'center',
+    },
+    leftText: {
+      fontSize: 20,
+      marginTop: 60,
+      marginLeft: 5,
+      marginBottom: 10,
       textAlign: 'center',
     },
     hadithTextArabic: {

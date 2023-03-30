@@ -1,4 +1,4 @@
-import { Text, Button, CloseIcon, View, ScrollView } from 'native-base';
+import { Text, Button, CloseIcon, View, ScrollView, Box } from 'native-base';
 import HadithCard from './HadithCard';
 import ContinueButton from './ContinueButton';
 import styles from './styles';
@@ -38,14 +38,15 @@ function WriteEntryPause({ navigation }) {
                 />
             </View>
 
-            <ScrollView>
+            {/* changed from ScrollView to View */}
+            <View marginTop="50">
                 <Text style={styles.pauseTitle}>Pause and Reflect</Text>
                 <HadithCard isHomeCard={false}/>
-                <Text marginTop="10" fontSize="20" >Once you're done reading...</Text>
+                <Text style={styles.leftText}>Once you're done reading...</Text>
                 <Button style={styles.writeEntryButton} onPress={() =>navigation.navigate('Question 1')}>
                     <Text>Continue</Text>
                 </Button>
-            </ScrollView>
+            </View>
         </ScreenWrapper>
     );
 }

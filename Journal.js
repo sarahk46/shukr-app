@@ -27,7 +27,7 @@ function Journal({ navigation }) {
   return (
     <ScreenWrapper>
       <ScrollView>
-          {journalEntries.size > 0
+          {journalEntries.length > 0
           ? journalEntries.map((entry, index) => (
             <Stack key={index} direction="column" space={3} /* key={entry.id} */ >
               {/* <Text>{entry.date}</Text> */}
