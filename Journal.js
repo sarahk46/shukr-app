@@ -18,11 +18,6 @@ function journalEntryButton(dateToDisplay) {
   );
 }
 
-// Should take in the entire journalEntries and create a mapping function
-// for each entry
-// ViewEntry will take in a single entry 
-
-
 // TODO: Before release, would need to also accept
 // a list of data of all entries where for each entry, also includes
 // data of answers for each question
@@ -32,7 +27,8 @@ function Journal({ navigation }) {
   return (
     <ScreenWrapper>
       <ScrollView>
-          {journalEntries?.map((entry, index) => (
+          {journalEntries.size > 0
+          ? journalEntries.map((entry, index) => (
             <Stack key={index} direction="column" space={3} /* key={entry.id} */ >
               {/* <Text>{entry.date}</Text> */}
                 <Pressable style={styles.journalEntryButton} onPress={() =>
@@ -44,7 +40,9 @@ function Journal({ navigation }) {
                 <ChevronRightIcon marginRight="3" size="5"/>
                 </Pressable>
             </Stack>
-          ))}
+          ))
+          : <Text style={styles.title}>No Entries Yet!</Text>
+          }
         
         {/* {journalEntryButton("March 13, 2023", navigation)} */}
         {/* {journalEntryButton("March 12, 2023")} */}

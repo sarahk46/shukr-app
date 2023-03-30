@@ -27,12 +27,21 @@ function topBarWithEscOnly(navigation) {
 function WriteEntryPause({ navigation }) {
   return(
         <ScreenWrapper>
-            {topBarWithEscOnly(navigation)}
+            <View
+            flexDirection="row" alignItems="center" justifyContent="space-between">
+                <Text fontSize="16">March 14, 2022</Text>
+                <Button
+                startIcon={<CloseIcon/>}
+                _icon={{color: "black"}}
+                style={styles.iconButton}
+                onPress={() => navigation.navigate('Home')}
+                />
+            </View>
 
             <ScrollView>
-                <Text bold fontSize="30" color='grey' textAlign="center" marginBottom="10">Pause and Reflect</Text>
+                <Text style={styles.pauseTitle}>Pause and Reflect</Text>
                 <HadithCard isHomeCard={false}/>
-                <Text marginTop="10" fontSize="20" textAlign="center" >Once you're done reading...</Text>
+                <Text marginTop="10" fontSize="20" >Once you're done reading...</Text>
                 <Button style={styles.writeEntryButton} onPress={() =>navigation.navigate('Question 1')}>
                     <Text>Continue</Text>
                 </Button>

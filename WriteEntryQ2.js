@@ -35,7 +35,7 @@ function WriteEntryQ2({ navigation, route }) {
                 onChangeText={setResponse}
             />
 
-        <Button style={styles.writeEntryButton} onPress={handleContinue}><Text>Continue</Text></Button>
+            <Button style={styles.writeEntryButton} onPress={handleContinue}><Text>Continue</Text></Button>
         
         </ScrollView>
     </ScreenWrapper>

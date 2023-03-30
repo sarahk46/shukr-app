@@ -66,6 +66,11 @@ const styles = StyleSheet.create({
     },
 
     // Text
+    hadithTitle: {
+      marginBottom: 10,
+      marginTop: 10,
+      fontSize: 22,
+    },
     title: {
       // fontFamily: 'Open Sans',
       // fontSize: '50xl',
@@ -73,6 +78,16 @@ const styles = StyleSheet.create({
       marginBottom: 10,
       marginTop: 10,
       fontSize: 22,
+      marginLeft: 10,
+    },
+    pauseTitle: {
+      marginBottom: 20,
+      marginTop: 20,
+      paddingTop: 20,
+      fontSize: 30,
+      marginLeft: 10,
+      alignSelf: 'stretch',
+      textAlign: 'center',
     },
     hadithTextArabic: {
       // fontFamily: 'Amiri Quran',

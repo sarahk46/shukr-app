@@ -17,7 +17,7 @@ function displayButton(isHomeCard, navigation) {
 function HadithCard({ isHomeCard, navigation }) {
     return (
         <Box style={styles.hadithBox}>
-            <Text bold style={styles.title}>HADITH OF THE DAY</Text>
+            <Text bold style={styles.hadithTitle}>HADITH OF THE DAY</Text>
             <Text style={styles.hadithTextArabic}> 
     دَّثَنَا قَبِيصَةُ، حَدَّثَنَا سُفْيَانُ، عَنْ أَبِي حَازِمٍ، عَنْ سَهْلِ بْنِ سَعْدٍ ـ رضى الله عنه ـ عَنِ النَّبِيِّ صلى الله عليه وسلم قَالَ " الرَّوْحَةُ وَالْغَدْوَةُ فِي سَبِيلِ اللَّهِ أَفْضَلُ مِنَ الدُّنْيَا وَمَا فِيهَا</Text>
             
