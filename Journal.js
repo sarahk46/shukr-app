@@ -1,9 +1,10 @@
-import { ScrollView, Button, ChevronRightIcon, Heading, Text, Pressable, Stack } from 'native-base';
+import { ScrollView, Button, ChevronRightIcon, Heading, Text, Pressable, Stack, View } from 'native-base';
 import styles from './styles';
 import { useNavigation } from '@react-navigation/native';
 import ScreenWrapper from './ScreenWrapper';
 import React, { useContext } from 'react';
 import JournalContext from './JournalContext';
+import { Image } from 'react-native';
 
 function journalEntryButton(dateToDisplay) {
   const navigation = useNavigation();
@@ -16,6 +17,19 @@ function journalEntryButton(dateToDisplay) {
     </Pressable>
 
   );
+}
+
+function displayNoEntriesYet() {
+  return(
+    <View flex="1" justifyContent="center">
+      <View alignItems="center">
+        <Image source={require('./LoadingWidgets.png')}/>
+          <Text bold fontSize="18" textAlign="center">No Entries Yet!</Text>
+          <Text textAlign="center">Get started by writing an entry or checking out today’s hadith!</Text>
+      </View>
+    </View>
+  );
+
 }
 
 // TODO: Before release, would need to also accept
@@ -41,7 +55,8 @@ function Journal({ navigation }) {
                 </Pressable>
             </Stack>
           ))
-          : <Text style={styles.title}>No Entries Yet!</Text>
+          :
+          displayNoEntriesYet()
           }
         
         {/* {journalEntryButton("March 13, 2023", navigation)} */}

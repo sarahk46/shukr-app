@@ -70,10 +70,11 @@ const styles = StyleSheet.create({
     viewEntryText: {
       minHeight: 150,
       backgroundColor: "#F4F1DE",
-      fontSize: 18,
       color: "#A3A3A3",
     },
-
+    editEntryText: {
+      minHeight: 150,
+    },
     // Text
     hadithTitle: {
       marginBottom: 10,
