@@ -72,14 +72,14 @@ function ViewEntry({ route, navigation }) {
                     question3: text,
                   })
                 }
-                style={styles.editEntryText}
+                style={styles.editEntryText} marginBottom="10"
               />
-              <Button onPress={handleSave} style={styles.button}>
-                Save
+              {/* <Button onPress={handleSave} style={styles.button}>
+                <Text color="#3D405B">Save</Text>
               </Button>
               <Button onPress={handleCancel} style={styles.button}>
-                Cancel
-              </Button>
+                <Text color="#3D405B">Cancel</Text>
+              </Button> */}
             </>
           ) : (
             <>
@@ -108,6 +108,27 @@ function ViewEntry({ route, navigation }) {
           onPress={() => setIsEditing(true)}
           style={[styles.iconButton, styles.floatBottomRight]}
           startIcon={<MaterialCommunityIcons name="pencil" size={32} color="black" />}
+          _icon={{color: "black"}}
+        >
+        </Button>
+      }
+
+      {/* floating Save button */}
+      {isEditing &&
+        <Button
+          onPress={handleSave}
+          style={[styles.iconButton, styles.floatBottomRight]}
+          startIcon={<MaterialCommunityIcons name="check" size={32} color="black" />}
+          _icon={{color: "black"}}
+        >
+        </Button>
+      }
+      {/* floating Cancel button */}
+      {isEditing &&
+        <Button
+          onPress={handleCancel}
+          style={[styles.iconButton, styles.floatBottomLeft]}
+          startIcon={<MaterialCommunityIcons name="close" size={32} color="black" />}
           _icon={{color: "black"}}
         >
         </Button>

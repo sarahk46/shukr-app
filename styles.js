@@ -69,8 +69,6 @@ const styles = StyleSheet.create({
     },
     viewEntryText: {
       minHeight: 150,
-      variant: "outline",
-      multiline: true,
       backgroundColor: "#F4F1DE",
       fontSize: 18,
       color: "#A3A3A3",
@@ -143,7 +141,6 @@ const styles = StyleSheet.create({
       fontSize: 20,
       marginTop: 20,
       borderRadius: 30,
-      textDecorationColor: '#3D405B',
     },
     iconButton: {
       backgroundColor: '#F2CC8F',
@@ -176,6 +173,11 @@ const styles = StyleSheet.create({
       position: 'absolute',
       bottom: 20,
       right: 20,
+    },
+    floatBottomLeft: {
+      position: 'absolute',
+      bottom: 20,
+      left: 20,
     }
   });
   
