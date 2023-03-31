@@ -21,12 +21,10 @@ function journalEntryButton(dateToDisplay) {
 
 function displayNoEntriesYet() {
   return(
-    <View flex="1" justifyContent="center" flexDirection="column">
-      <View alignItems="center">
-        <Image source={require('./LoadingWidgets.png')}/>
-          <Text bold fontSize="18" textAlign="center">No Entries Yet!</Text>
-          <Text textAlign="center">Get started by writing an entry or checking out today’s hadith!</Text>
-      </View>
+    <View marginTop="79">
+      <Image source={require('./LoadingWidgets.png')} alignSelf="center"/>
+      <Text bold fontSize="18" textAlign="center">No Entries Yet!</Text>
+      <Text textAlign="center" marginTop="5">Get started by writing an entry or checking out today’s hadith!</Text>
     </View>
   );
 

@@ -71,9 +71,8 @@ const styles = StyleSheet.create({
       minHeight: 150,
       backgroundColor: "#F4F1DE",
       color: "#A3A3A3",
-    },
-    editEntryText: {
-      minHeight: 150,
+      textAlignVertical: "top",
+      fontSize: 18,
     },
     // Text
     hadithTitle: {

@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import { TextInput } from 'react-native';
 import { Box, Button, ScrollView, Stack, Text, TextArea, Icon, ChevronLeftIcon, View } from 'native-base';
 import JournalContext from './JournalContext';
 import HadithCard from './HadithCard';
@@ -59,7 +60,7 @@ function ViewEntry({ route, navigation }) {
               <Text style={styles.questionText}>
                 Understand: How would you describe this hadith to someone else?
               </Text>
-              <TextArea
+              <TextInput
                 value={editedEntry.question1}
                 onChangeText={(text) =>
                   setEditedEntry({
@@ -67,7 +68,8 @@ function ViewEntry({ route, navigation }) {
                     question1: text,
                   })
                 }
-                style={styles.editEntryText}
+                style={styles.viewEntryText}
+                multiline={true}
                 // Below is the way to add the correct background color styling,
                 // But for some reason, I can't see the text of the previous response
                 // style={{...styles.editEntryText, backgroundColor: '#F4F1DE', color: 'black'}}
@@ -75,7 +77,7 @@ function ViewEntry({ route, navigation }) {
               <Text style={styles.questionText}>
                 Reflect: How does this hadith relate to your past and present?
               </Text>
-              <TextArea
+              <TextInput
                 value={editedEntry.question2}
                 onChangeText={(text) =>
                   setEditedEntry({
@@ -83,12 +85,13 @@ function ViewEntry({ route, navigation }) {
                     question2: text,
                   })
                 }
-                style={styles.editEntryText}
+                style={styles.viewEntryText}
+                multiline={true}
               />
               <Text style={styles.questionText}>
                 Action: How can you implement this hadith in your future?
               </Text>
-              <TextArea
+              <TextInput
                 value={editedEntry.question3}
                 onChangeText={(text) =>
                   setEditedEntry({
@@ -96,7 +99,8 @@ function ViewEntry({ route, navigation }) {
                     question3: text,
                   })
                 }
-                style={styles.editEntryText} marginBottom="10"
+                style={styles.viewEntryText}
+                multiline={true}
               />
               {/* <Button onPress={handleSave} style={styles.button}>
                 <Text color="#3D405B">Save</Text>
@@ -121,18 +125,18 @@ function ViewEntry({ route, navigation }) {
               </View>
               <HadithCard isHomeCard={false} />
               <Text style={styles.questionText}>Understand: How would you describe this hadith to someone else?</Text>
-              <Box style={styles.viewEntryText} _text={{fontSize: 18}}>
-                {editedEntry.question1}
+              <Box>
+                <Text style={styles.viewEntryText}>{editedEntry.question1}</Text>
               </Box>
               
               <Text style={styles.questionText}>Reflect: How does this apply to your past and present?</Text>
-              <Box style={styles.viewEntryText} _text={{fontSize: 18}}>
-                {editedEntry.question2}
+              <Box>
+                <Text style={styles.viewEntryText}>{editedEntry.question2}</Text>
               </Box>
 
               <Text style={styles.questionText}>Action: How can you implement this hadith in your future?</Text>
-              <Box style={styles.viewEntryText} marginBottom="5" _text={{fontSize: 18}}>
-                {editedEntry.question3}
+              <Box marginBottom="5">
+                <Text style={styles.viewEntryText}>{editedEntry.question3}</Text>
               </Box>
             </>
           )}
