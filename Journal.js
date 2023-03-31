@@ -21,7 +21,7 @@ function journalEntryButton(dateToDisplay) {
 
 function displayNoEntriesYet() {
   return(
-    <View flex="1" justifyContent="center">
+    <View flex="1" justifyContent="center" flexDirection="column">
       <View alignItems="center">
         <Image source={require('./LoadingWidgets.png')}/>
           <Text bold fontSize="18" textAlign="center">No Entries Yet!</Text>
