@@ -5,7 +5,7 @@ function ContinueButton({type, navigation}) {
     if (type != "Question 3") {
         return (
             <Button 
-            style={styles.writeEntryButton}
+            style={styles.continueButton}
             _text={{color: "#3D405B", fontSize: "24"}}
             onPress={ () => {
                 if (type === "Pause") {
@@ -23,7 +23,7 @@ function ContinueButton({type, navigation}) {
     } else {
         return (
             <Button 
-            style={styles.writeEntryButton}
+            style={styles.continueButton}
             _text={{color: "#3D405B", fontSize: "24"}}
             onPress={() => navigation.navigate('Your Journal')}>
                     Submit

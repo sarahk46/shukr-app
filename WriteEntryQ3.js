@@ -1,6 +1,5 @@
 import { Text, Input, ScrollView, Button, Modal } from 'native-base';
 import HadithCard from './HadithCard';
-import ContinueButton from './ContinueButton';
 import styles from './styles';
 import ScreenWrapper from './ScreenWrapper';
 import TopBar from './TopBar';
@@ -45,7 +44,7 @@ function WriteEntryQ3({ navigation, route }) {
                 onChangeText={setResponse}
             />
 
-        <Button style={styles.writeEntryButton} onPress={handleSubmission}><Text>Submit</Text></Button>
+        <Button style={styles.continueButton} onPress={handleSubmission}><Text>Submit</Text></Button>
 
         <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
         <Modal.Content>

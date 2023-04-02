@@ -102,7 +102,8 @@ function ViewEntry({ route, navigation }) {
                 style={styles.viewEntryText}
                 multiline={true}
               />
-              {/* <Button onPress={handleSave} style={styles.button}>
+              {// may switch back to these instead of floating buttons
+              /* <Button onPress={handleSave} style={styles.button}>
                 <Text color="#3D405B">Save</Text>
               </Button>
               <Button onPress={handleCancel} style={styles.button}>

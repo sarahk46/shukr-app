@@ -1,11 +1,9 @@
 import { Text, Input, ScrollView, Button } from 'native-base';
 import HadithCard from './HadithCard';
-import ContinueButton from './ContinueButton';
 import styles from './styles';
 import ScreenWrapper from './ScreenWrapper';
 import TopBar from './TopBar';
-import React, { useContext, useState } from 'react';
-import JournalContext from './JournalContext';
+import React, { useState } from 'react';
 
 function WriteEntryQ2({ navigation, route }) {
   const [response, setResponse] = useState('');
@@ -35,7 +33,7 @@ function WriteEntryQ2({ navigation, route }) {
                 onChangeText={setResponse}
             />
 
-            <Button style={styles.writeEntryButton} onPress={handleContinue}><Text>Continue</Text></Button>
+            <Button style={styles.continueButton} onPress={handleContinue}><Text>Continue</Text></Button>
         
         </ScrollView>
     </ScreenWrapper>

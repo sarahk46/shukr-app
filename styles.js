@@ -42,6 +42,12 @@ const styles = StyleSheet.create({
       elevation: 5,
       alignItems: 'center',
     },
+    centerContainer: {
+      flex: 1,
+      justifyContent: "center",
+      alignItems: "center",
+      marginHorizontal: 20,
+    },
 
     questionDivider: {
       width: '95%',
@@ -61,13 +67,14 @@ const styles = StyleSheet.create({
       width: 200,
       alignSelf: "center",
       minHeight: 150,
-      variant: "outline",
       multiline: true,
       backgroundColor: "#F4F1DE",
       fontSize: 18,
       color: "#A3A3A3",
+      textAlignVertical: "top",
     },
     viewEntryText: {
+      padding: 10,
       minHeight: 150,
       backgroundColor: "#F4F1DE",
       color: "#A3A3A3",
@@ -91,7 +98,7 @@ const styles = StyleSheet.create({
     },
     pauseTitle: {
       // fontFamily: 'Open Sans',
-      marginBottom: 30,
+      marginBottom: 20,
       fontSize: 30,
       paddingTop: 20,
       textAlign: 'center',
@@ -148,7 +155,7 @@ const styles = StyleSheet.create({
       borderRadius: 30,
       textDecorationColor: '#3D405B',
     },
-    writeEntryButton: {
+    continueButton: {
       marginTop: 4,
       backgroundColor: '#F2CC8F',
       variant: "solid",

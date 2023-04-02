@@ -19,12 +19,14 @@ function journalEntryButton(dateToDisplay) {
   );
 }
 
-function displayNoEntriesYet() {
-  return(
-    <View marginTop="79">
-      <Image source={require('./LoadingWidgets.png')} alignSelf="center"/>
-      <Text bold fontSize="18" textAlign="center">No Entries Yet!</Text>
-      <Text textAlign="center" marginTop="5">Get started by writing an entry or checking out today’s hadith!</Text>
+function NoEntriesYet() {
+  return (
+    <View style={styles.centerContainer}>
+      <View>
+        <Image source={require('./LoadingWidgets.png')} alignSelf="center"/>
+        <Text bold fontSize="18" textAlign="center">No Entries Yet!</Text>
+        <Text textAlign="center" marginTop="5">Get started by writing an entry or checking out today’s hadith!</Text>
+      </View>
     </View>
   );
 
@@ -37,30 +39,27 @@ function displayNoEntriesYet() {
 function Journal({ navigation }) {
   const { journalEntries } = useContext(JournalContext);
   return (
+    journalEntries.length > 0
+    ?
     <ScreenWrapper>
       <ScrollView>
-          {journalEntries.length > 0
-          ? journalEntries.map((entry, index) => (
-            <Stack key={index} direction="column" space={3} /* key={entry.id} */ >
-              {/* <Text>{entry.date}</Text> */}
-                <Pressable style={styles.journalEntryButton} onPress={() =>
-                  navigation.navigate('View an Entry', {
-                  date: 'March 15',  // get entryDate here and in the actual text too
-                  entry,
-                })}>
-                <Text marginLeft="15" fontSize="16">March 14</Text>
-                <ChevronRightIcon marginRight="3" size="5"/>
-                </Pressable>
-            </Stack>
-          ))
-          :
-          displayNoEntriesYet()
-          }
-        
-        {/* {journalEntryButton("March 13, 2023", navigation)} */}
-        {/* {journalEntryButton("March 12, 2023")} */}
+        {journalEntries.map((entry, index) => (
+          <Stack key={index} direction="column" space={3} /* key={entry.id} */ >
+            {/* <Text>{entry.date}</Text> */}
+              <Pressable style={styles.journalEntryButton} onPress={() =>
+                navigation.navigate('View an Entry', {
+                date: 'March 15',  // get entryDate here and in the actual text too
+                entry,
+              })}>
+              <Text marginLeft="15" fontSize="16">March 14</Text>
+              <ChevronRightIcon marginRight="3" size="5"/>
+              </Pressable>
+          </Stack>
+        ))}
       </ScrollView>
     </ScreenWrapper>
+    :
+    <NoEntriesYet />
   );
 }
 
