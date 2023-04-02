@@ -43,8 +43,11 @@ function HomeStackScreen() {
 
 const WriteEntryStack = createStackNavigator();
 function WriteEntryStackScreen() {
+  // TODO: add functionality (using Context or something else) to determine if
+  // entry has already been written for the day - if so, display a "Already journaled today" screen
+  const initialScreen = 'Pause and Reflect';
   return (
-    <WriteEntryStack.Navigator>
+    <WriteEntryStack.Navigator initialRouteName={initialScreen}>
       <WriteEntryStack.Screen name="Pause and Reflect" component={WriteEntryPause}
         options={{
           header: ({ navigation }) => null // This will hide the header, but you can also pass in a custom header component that receives the navigation prop
