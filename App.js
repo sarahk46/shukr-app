@@ -3,18 +3,8 @@ import 'react-native-gesture-handler';
 import React, { useState } from 'react';
 import { ImageBackground, StyleSheet } from 'react-native';
 import { DefaultTheme, NavigationContainer } from '@react-navigation/native';
-import { NativeBaseProvider} from 'native-base';
-import Home from './Home.js';
-import Journal from './Journal.js';
-import WriteEntry from './WriteEntry.js';
-// This is just for testing
-import WriteEntryPart1 from './WriteEntryPart1.js';
-import ViewEntry from './ViewEntry.js';
-import WriteEntryPause from './WriteEntryPause.js';
-import WriteEntryQ1 from './WriteEntryQ1.js';
-import WriteEntryQ2 from './WriteEntryQ2.js';
-import WriteEntryQ3 from './WriteEntryQ3.js';
-import {TabNavigator} from './Navigators';
+import { NativeBaseProvider } from 'native-base';
+import { TabNavigator } from './Navigators';
 import JournalContext from './JournalContext';
 
 // For the background image:

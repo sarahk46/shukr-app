@@ -12,8 +12,8 @@ function journalEntryButton(dateToDisplay) {
     // Need to navigate to the ViewEntry screen,
     // but this will only happen if gi
     <Pressable style={styles.journalEntryButton} onPress={() => navigation.navigate("ViewEntry")}>
-        <Text marginLeft="15" fontSize="16">{dateToDisplay} </Text>
-        <ChevronRightIcon marginRight="3" size="5"/>
+      <Text marginLeft="15" fontSize="16">{dateToDisplay} </Text>
+      <ChevronRightIcon marginRight="3" size="5" />
     </Pressable>
 
   );
@@ -23,7 +23,7 @@ function NoEntriesYet() {
   return (
     <View style={styles.centerContainer}>
       <View>
-        <Image source={require('./LoadingWidgets.png')} alignSelf="center"/>
+        <Image source={require('./LoadingWidgets.png')} alignSelf="center" />
         <Text bold fontSize="18" textAlign="center">No Entries Yet!</Text>
         <Text textAlign="center" marginTop="5">Get started by writing an entry or checking out today’s hadith!</Text>
       </View>
@@ -40,26 +40,24 @@ function Journal({ navigation }) {
   const { journalEntries } = useContext(JournalContext);
   return (
     journalEntries.length > 0
-    ?
-    <ScreenWrapper>
-      <ScrollView>
-        {journalEntries.map((entry, index) => (
-          <Stack key={index} direction="column" space={3} /* key={entry.id} */ >
-            {/* <Text>{entry.date}</Text> */}
+      ?
+      <ScreenWrapper>
+        <ScrollView>
+          {journalEntries.map((entry, index) => (
+            <Stack key={index} direction="column" space={3} /* key={entry.id} */ >
               <Pressable style={styles.journalEntryButton} onPress={() =>
                 navigation.navigate('View an Entry', {
-                date: 'March 15',  // get entryDate here and in the actual text too
-                entry,
-              })}>
-              <Text marginLeft="15" fontSize="16">March 14</Text>
-              <ChevronRightIcon marginRight="3" size="5"/>
+                  entry,
+                })}>
+                <Text marginLeft="15" fontSize="16">{entry.date}</Text>
+                <ChevronRightIcon marginRight="3" size="5" />
               </Pressable>
-          </Stack>
-        ))}
-      </ScrollView>
-    </ScreenWrapper>
-    :
-    <NoEntriesYet />
+            </Stack>
+          ))}
+        </ScrollView>
+      </ScreenWrapper>
+      :
+      <NoEntriesYet />
   );
 }
 

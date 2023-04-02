@@ -10,20 +10,21 @@ import { MaterialCommunityIcons } from 'react-native-vector-icons';
 
 function displayTopBar(date, isEditing) {
   if (isEditing) {
-    return (<Text style={styles.dateTitle}>{date}</Text>);
+    return (
+      <Text style={styles.dateTitle}>{date}</Text>
+    );
   }
   return (
     <View flexDirection="row" alignItems="center" justifyContent="space-between" marginBottom="5">
       <Button
-        startIcon={<ChevronLeftIcon/>}
-        _icon={{color: "black"}}
+        startIcon={<ChevronLeftIcon />}
+        _icon={{ color: "black" }}
         style={styles.iconButton}
         onPress={() => navigation.navigate('Your Journal')}
       />
       <Text style={styles.dateTitle}>{date}</Text>
     </View>
   );
-
 }
 
 function ViewEntry({ route, navigation }) {
@@ -52,7 +53,7 @@ function ViewEntry({ route, navigation }) {
       <ScrollView>
         <Stack direction="column" space={3}>
           {/* <Text style={styles.dateTitle}>{route.params.date}</Text> */}
-          
+
           {isEditing ? (
             <>
               <Text fontSize="16" alignText="center">{route.params.date}</Text>
@@ -70,9 +71,9 @@ function ViewEntry({ route, navigation }) {
                 }
                 style={styles.viewEntryText}
                 multiline={true}
-                // Below is the way to add the correct background color styling,
-                // But for some reason, I can't see the text of the previous response
-                // style={{...styles.editEntryText, backgroundColor: '#F4F1DE', color: 'black'}}
+              // Below is the way to add the correct background color styling,
+              // But for some reason, I can't see the text of the previous response
+              // style={{...styles.editEntryText, backgroundColor: '#F4F1DE', color: 'black'}}
               />
               <Text style={styles.questionText}>
                 Reflect: How does this hadith relate to your past and present?
@@ -111,36 +112,36 @@ function ViewEntry({ route, navigation }) {
               </Button> */}
             </>
           ) : (
-            <>
-              <View flexDirection="row" alignItems="center" justifyContent="space-between" marginBottom="5"
-              height="60">
-                <Button
-                  startIcon={<ChevronLeftIcon/>}
-                  _icon={{color: "black"}}
-                  style={styles.iconButton}
-                  onPress={() => navigation.navigate('Your Journal')}
-                />
-                <Text fontSize="16">{route.params.date}</Text>
-                {/* Hacky way of putting a third part */}
-                <View width="10"/>
-              </View>
-              <HadithCard isHomeCard={false} />
-              <Text style={styles.questionText}>Understand: How would you describe this hadith to someone else?</Text>
-              <Box>
-                <Text style={styles.viewEntryText}>{editedEntry.question1}</Text>
-              </Box>
-              
-              <Text style={styles.questionText}>Reflect: How does this apply to your past and present?</Text>
-              <Box>
-                <Text style={styles.viewEntryText}>{editedEntry.question2}</Text>
-              </Box>
+              <>
+                <View flexDirection="row" alignItems="center" justifyContent="space-between" marginBottom="5"
+                  height="60">
+                  <Button
+                    startIcon={<ChevronLeftIcon />}
+                    _icon={{ color: "black" }}
+                    style={styles.iconButton}
+                    onPress={() => navigation.navigate('Your Journal')}
+                  />
+                  <Text fontSize="16">{route.params.date}</Text>
+                  {/* Hacky way of putting a third part */}
+                  <View width="10" />
+                </View>
+                <HadithCard isHomeCard={false} />
+                <Text style={styles.questionText}>Understand: How would you describe this hadith to someone else?</Text>
+                <Box>
+                  <Text style={styles.viewEntryText}>{editedEntry.question1}</Text>
+                </Box>
 
-              <Text style={styles.questionText}>Action: How can you implement this hadith in your future?</Text>
-              <Box marginBottom="5">
-                <Text style={styles.viewEntryText}>{editedEntry.question3}</Text>
-              </Box>
-            </>
-          )}
+                <Text style={styles.questionText}>Reflect: How does this apply to your past and present?</Text>
+                <Box>
+                  <Text style={styles.viewEntryText}>{editedEntry.question2}</Text>
+                </Box>
+
+                <Text style={styles.questionText}>Action: How can you implement this hadith in your future?</Text>
+                <Box marginBottom="5">
+                  <Text style={styles.viewEntryText}>{editedEntry.question3}</Text>
+                </Box>
+              </>
+            )}
         </Stack>
       </ScrollView>
 
@@ -150,7 +151,7 @@ function ViewEntry({ route, navigation }) {
           onPress={() => setIsEditing(true)}
           style={[styles.iconButton, styles.floatBottomRight]}
           startIcon={<MaterialCommunityIcons name="pencil" size={32} color="black" />}
-          _icon={{color: "black"}}
+          _icon={{ color: "black" }}
         >
         </Button>
       }
@@ -161,7 +162,7 @@ function ViewEntry({ route, navigation }) {
           onPress={handleSave}
           style={[styles.iconButton, styles.floatBottomRight]}
           startIcon={<MaterialCommunityIcons name="check" size={32} color="black" />}
-          _icon={{color: "black"}}
+          _icon={{ color: "black" }}
         >
         </Button>
       }
@@ -171,7 +172,7 @@ function ViewEntry({ route, navigation }) {
           onPress={handleCancel}
           style={[styles.iconButton, styles.floatBottomLeft]}
           startIcon={<MaterialCommunityIcons name="close" size={32} color="black" />}
-          _icon={{color: "black"}}
+          _icon={{ color: "black" }}
         >
         </Button>
       }

@@ -4,39 +4,46 @@ import styles from './styles';
 import ScreenWrapper from './ScreenWrapper';
 import TopBar from './TopBar';
 import React, { useState } from 'react';
+import getCurrentDate from './helpers'
 
 function WriteEntryQ2({ navigation, route }) {
-  const [response, setResponse] = useState('');
+    const [response, setResponse] = useState('');
 
-  const handleContinue = () => {
-    const responses = {...route.params.responses, question2: response };
-    
-    navigation.navigate('Question 3', {
-        responses
-      });
-  };
+    const handleContinue = () => {
+        const responses = { ...route.params.responses, question2: response };
+        navigation.navigate('Question 3', {
+            responses
+        });
+    };
 
-  return (
-    <ScreenWrapper>
-        <TopBar navigation={navigation} backTo={'Question 1'} exit={'Pause and Reflect'} date = {'March 14, 2022'}
-        />
-        <ScrollView>
-            <HadithCard isHomeCard={false}/>
-            <Text 
-            style={styles.questionText}>Reflect: How does this apply to your past and present?</Text>
-            <Input width="95%"
-                alignSelf="center"
-                placeholder="Type your response here..."
-                multiline={true}
-                style={styles.entryInput}
-                value={response}
-                onChangeText={setResponse}
+    return (
+        <ScreenWrapper>
+            <TopBar
+                navigation={navigation}
+                backTo={'Question 1'}
+                exit={'Pause and Reflect'}
+                date={getCurrentDate(true)}
             />
 
-            <Button style={styles.continueButton} onPress={handleContinue}><Text>Continue</Text></Button>
-        
-        </ScrollView>
-    </ScreenWrapper>
+            <ScrollView>
+                <HadithCard isHomeCard={false} />
+                <Text style={styles.questionText}>
+                    Reflect: How does this apply to your past and present?
+                </Text>
+                <Input width="95%"
+                    alignSelf="center"
+                    placeholder="Type your response here..."
+                    multiline={true}
+                    style={styles.entryInput}
+                    value={response}
+                    onChangeText={setResponse}
+                />
+
+                <Button style={styles.continueButton} onPress={handleContinue}>
+                    <Text>Continue</Text>
+                </Button>
+            </ScrollView>
+        </ScreenWrapper>
     );
 }
 

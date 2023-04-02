@@ -14,15 +14,15 @@ const JournalStack = createStackNavigator();
 function JournalStackScreen() {
   return (
     <JournalStack.Navigator>
-      <JournalStack.Screen name = "Journal" component = {Journal}
+      <JournalStack.Screen name="Journal" component={Journal}
         options={{
-        header: ({ navigation }) => null // This will hide the header, but you can also pass in a custom header component that receives the navigation prop
-      }}
+          header: ({ navigation }) => null // This will hide the header, but you can also pass in a custom header component that receives the navigation prop
+        }}
       />
-      <JournalStack.Screen name = "View an Entry" component = {ViewEntry}
+      <JournalStack.Screen name="View an Entry" component={ViewEntry}
         options={{
-        header: ({ navigation }) => null // This will hide the header, but you can also pass in a custom header component that receives the navigation prop
-      }}
+          header: ({ navigation }) => null // This will hide the header, but you can also pass in a custom header component that receives the navigation prop
+        }}
       />
     </JournalStack.Navigator>
   );
@@ -32,10 +32,10 @@ const HomeStack = createStackNavigator();
 function HomeStackScreen() {
   return (
     <HomeStack.Navigator>
-      <HomeStack.Screen name = "Home Page" component = {Home}
+      <HomeStack.Screen name="Home Page" component={Home}
         options={{
-        header: ({ navigation }) => null // This will hide the header, but you can also pass in a custom header component that receives the navigation prop
-      }}
+          header: ({ navigation }) => null // This will hide the header, but you can also pass in a custom header component that receives the navigation prop
+        }}
       />
     </HomeStack.Navigator>
   );
@@ -45,24 +45,24 @@ const WriteEntryStack = createStackNavigator();
 function WriteEntryStackScreen() {
   return (
     <WriteEntryStack.Navigator>
-      <WriteEntryStack.Screen name = "Pause and Reflect" component = {WriteEntryPause}
+      <WriteEntryStack.Screen name="Pause and Reflect" component={WriteEntryPause}
         options={{
-        header: ({ navigation }) => null // This will hide the header, but you can also pass in a custom header component that receives the navigation prop
-      }}
+          header: ({ navigation }) => null // This will hide the header, but you can also pass in a custom header component that receives the navigation prop
+        }}
       />
-      <WriteEntryStack.Screen name = "Question 1" component = {WriteEntryQ1}
+      <WriteEntryStack.Screen name="Question 1" component={WriteEntryQ1}
         options={{
-        header: ({ navigation }) => null // This will hide the header, but you can also pass in a custom header component that receives the navigation prop
-      }}/>
-      <WriteEntryStack.Screen name = "Question 2" component = {WriteEntryQ2}
+          header: ({ navigation }) => null // This will hide the header, but you can also pass in a custom header component that receives the navigation prop
+        }} />
+      <WriteEntryStack.Screen name="Question 2" component={WriteEntryQ2}
         options={{
-        header: ({ navigation }) => null // This will hide the header, but you can also pass in a custom header component that receives the navigation prop
-      }}
+          header: ({ navigation }) => null // This will hide the header, but you can also pass in a custom header component that receives the navigation prop
+        }}
       />
-      <WriteEntryStack.Screen name = "Question 3" component = {WriteEntryQ3}
+      <WriteEntryStack.Screen name="Question 3" component={WriteEntryQ3}
         options={{
-        header: ({ navigation }) => null // This will hide the header, but you can also pass in a custom header component that receives the navigation prop
-      }}
+          header: ({ navigation }) => null // This will hide the header, but you can also pass in a custom header component that receives the navigation prop
+        }}
       />
     </WriteEntryStack.Navigator>
   );
@@ -72,35 +72,35 @@ function WriteEntryStackScreen() {
 const Tab = createBottomTabNavigator();
 export function TabNavigator() {
   return (
-    <Tab.Navigator initialRouteName='Home' 
+    <Tab.Navigator initialRouteName='Home'
       screenOptions={({ route }) => ({
-          tabBarStyle: { backgroundColor: '#3d405b'},
-          headerShown: false,
-          tabBarIcon: ({ focused, color, size }) => {
-            let iconName;
-            if (route.name === 'Home') {
-              iconName = focused
-                ? 'home'
-                : 'home-outline';
-            } else if (route.name === 'Write an Entry') {
-              iconName = focused 
+        tabBarStyle: { backgroundColor: '#3d405b' },
+        headerShown: false,
+        tabBarIcon: ({ focused, color, size }) => {
+          let iconName;
+          if (route.name === 'Home') {
+            iconName = focused
+              ? 'home'
+              : 'home-outline';
+          } else if (route.name === 'Write an Entry') {
+            iconName = focused
               ? 'pencil'
               : 'pencil-outline';
-            } else if (route.name === 'Your Journal') {
-              iconName = focused ?
+          } else if (route.name === 'Your Journal') {
+            iconName = focused ?
               'book'
               : 'book-outline';
-            }
-            // You can return any component that you like here!
-            return <MaterialCommunityIcons name={iconName} size={size} color={color} />;
-          },
-          tabBarActiveTintColor: '#F2CC8F',
-          tabBarInactiveTintColor: 'gray',
-        })}
-      
-      >
-      <Tab.Screen name="Home" 
-        component={HomeStackScreen} 
+          }
+          // You can return any component that you like here!
+          return <MaterialCommunityIcons name={iconName} size={size} color={color} />;
+        },
+        tabBarActiveTintColor: '#F2CC8F',
+        tabBarInactiveTintColor: 'gray',
+      })}
+
+    >
+      <Tab.Screen name="Home"
+        component={HomeStackScreen}
         options={({ navigation }) => ({
           tabBarLabel: 'Home',
           navigation: navigation,
@@ -114,28 +114,28 @@ export function TabNavigator() {
           // ),
           // tabBarActiveTintColor: '#F2CC8F',
           // tabBarInactiveTintColor: 'grey'
-        })}/>
-      <Tab.Screen name="Write an Entry" 
-          component={WriteEntryStackScreen}
-          options={({ navigation }) => ({
+        })} />
+      <Tab.Screen name="Write an Entry"
+        component={WriteEntryStackScreen}
+        options={({ navigation }) => ({
           tabBarLabel: 'Write an Entry',
           navigation: navigation,
           // tabBarLabelStyle: {color: '#F2CC8F'},
           // tabBarIcon: ({ color, size }) => (
           //   <MaterialCommunityIcons name="pen-plus" color={'#F2CC8F'} size={iconSize} />
           // ),
-          })}
+        })}
       />
-      <Tab.Screen name="Your Journal" 
-          component={JournalStackScreen} 
-          options={({ navigation }) => ({
+      <Tab.Screen name="Your Journal"
+        component={JournalStackScreen}
+        options={({ navigation }) => ({
           tabBarLabel: 'Your Journal',
           navigation: navigation,
           // tabBarLabelStyle: {color: '#F2CC8F'},
           // tabBarIcon: ({ color, size }) => (
           //   <MaterialCommunityIcons name="notebook" color={'#F2CC8F'} size={iconSize} />
           // ),
-          })}
+        })}
       />
     </Tab.Navigator>
   );
