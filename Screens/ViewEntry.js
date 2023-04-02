@@ -1,12 +1,11 @@
 import React, { useContext, useState } from 'react';
 import { TextInput } from 'react-native';
 import { Box, Button, ScrollView, Stack, Text, TextArea, Icon, ChevronLeftIcon, View } from 'native-base';
-import JournalContext from './JournalContext';
-import HadithCard from './HadithCard';
-import styles from './styles';
-import ScreenWrapper from './ScreenWrapper';
+import JournalContext from '../JournalContext';
+import HadithCard from '../Components/HadithCard';
+import styles from '../styles';
+import ScreenWrapper from '../ScreenWrapper';
 import { MaterialCommunityIcons } from 'react-native-vector-icons';
-
 
 function displayTopBar(date, isEditing) {
   if (isEditing) {
@@ -48,70 +47,76 @@ function ViewEntry({ route, navigation }) {
     setIsEditing(false);
   };
 
+  function EditEntry() {
+    return (
+    <>
+        <Text fontSize="16" alignText="center">{route.params.date}</Text>
+        <HadithCard isHomeCard={false} />
+
+        <Text style={styles.questionText}>
+            Understand: How would you describe this hadith to someone else?
+        </Text>
+        <TextInput
+            value={editedEntry.question1}
+            onChangeText={(text) =>
+            setEditedEntry({
+                ...editedEntry,
+                question1: text,
+            })
+            }
+            style={styles.viewEntryText}
+            multiline={true}
+        // Below is the way to add the correct background color styling,
+        // But for some reason, I can't see the text of the previous response
+        // style={{...styles.editEntryText, backgroundColor: '#F4F1DE', color: 'black'}}
+        />
+
+        <Text style={styles.questionText}>
+            Reflect: How does this hadith relate to your past and present?
+        </Text>
+        <TextInput
+            value={editedEntry.question2}
+            onChangeText={(text) =>
+            setEditedEntry({
+                ...editedEntry,
+                question2: text,
+            })
+            }
+            style={styles.viewEntryText}
+            multiline={true}
+        />
+
+        <Text style={styles.questionText}>
+            Action: How can you implement this hadith in your future?
+        </Text>
+        <TextInput
+            value={editedEntry.question3}
+            onChangeText={(text) =>
+            setEditedEntry({
+                ...editedEntry,
+                question3: text,
+            })
+            }
+            style={styles.viewEntryText}
+            multiline={true}
+        />
+        
+        <Button onPress={handleSave} style={styles.button}>
+            <Text color="#3D405B">Save</Text>
+        </Button>
+        <Button onPress={handleCancel} style={styles.button}>
+            <Text color="#3D405B">Cancel</Text>
+        </Button>
+    </>
+    );
+  }
+
   return (
     <ScreenWrapper>
       <ScrollView>
         <Stack direction="column" space={3}>
-          {/* <Text style={styles.dateTitle}>{route.params.date}</Text> */}
-
-          {isEditing ? (
-            <>
-              <Text fontSize="16" alignText="center">{route.params.date}</Text>
-              <HadithCard isHomeCard={false} />
-              <Text style={styles.questionText}>
-                Understand: How would you describe this hadith to someone else?
-              </Text>
-              <TextInput
-                value={editedEntry.question1}
-                onChangeText={(text) =>
-                  setEditedEntry({
-                    ...editedEntry,
-                    question1: text,
-                  })
-                }
-                style={styles.viewEntryText}
-                multiline={true}
-              // Below is the way to add the correct background color styling,
-              // But for some reason, I can't see the text of the previous response
-              // style={{...styles.editEntryText, backgroundColor: '#F4F1DE', color: 'black'}}
-              />
-              <Text style={styles.questionText}>
-                Reflect: How does this hadith relate to your past and present?
-              </Text>
-              <TextInput
-                value={editedEntry.question2}
-                onChangeText={(text) =>
-                  setEditedEntry({
-                    ...editedEntry,
-                    question2: text,
-                  })
-                }
-                style={styles.viewEntryText}
-                multiline={true}
-              />
-              <Text style={styles.questionText}>
-                Action: How can you implement this hadith in your future?
-              </Text>
-              <TextInput
-                value={editedEntry.question3}
-                onChangeText={(text) =>
-                  setEditedEntry({
-                    ...editedEntry,
-                    question3: text,
-                  })
-                }
-                style={styles.viewEntryText}
-                multiline={true}
-              />
-              {// may switch back to these instead of floating buttons
-              /* <Button onPress={handleSave} style={styles.button}>
-                <Text color="#3D405B">Save</Text>
-              </Button>
-              <Button onPress={handleCancel} style={styles.button}>
-                <Text color="#3D405B">Cancel</Text>
-              </Button> */}
-            </>
-          ) : (
+          {isEditing ? <EditEntry />
+          : (
               <>
                 <View flexDirection="row" alignItems="center" justifyContent="space-between" marginBottom="5"
                   height="60">
@@ -157,7 +162,7 @@ function ViewEntry({ route, navigation }) {
       }
 
       {/* floating Save button */}
-      {isEditing &&
+      {/*isEditing &&
         <Button
           onPress={handleSave}
           style={[styles.iconButton, styles.floatBottomRight]}
@@ -165,9 +170,9 @@ function ViewEntry({ route, navigation }) {
           _icon={{ color: "black" }}
         >
         </Button>
-      }
+      */}
       {/* floating Cancel button */}
-      {isEditing &&
+      {/*isEditing &&
         <Button
           onPress={handleCancel}
           style={[styles.iconButton, styles.floatBottomLeft]}
@@ -175,7 +180,7 @@ function ViewEntry({ route, navigation }) {
           _icon={{ color: "black" }}
         >
         </Button>
-      }
+      */}
     </ScreenWrapper>
   );
 }

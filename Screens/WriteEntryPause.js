@@ -1,8 +1,8 @@
 import { Text, Button, CloseIcon, View, ScrollView, Box } from 'native-base';
-import HadithCard from './HadithCard';
-import styles from './styles';
-import ScreenWrapper from './ScreenWrapper';
-import getCurrentDate from './helpers'
+import HadithCard from '../Components/HadithCard';
+import styles from '../styles';
+import ScreenWrapper from '../ScreenWrapper';
+import getCurrentDate from '../helpers'
 // TODO: Figure out redirection w/ "Reflect Now" to WriteEntry page
 // NavigationContainer should be a part of the solution -- read more here: 
 // https://reactnavigation.org/docs/navigating
@@ -12,7 +12,9 @@ function TopBarWithEscOnly({ navigation }) {
     const date = getCurrentDate(true);
     return (
         <View
-            flexDirection="row" alignItems="center" justifyContent="space-between"
+            flexDirection="row"
+            alignItems="center"
+            justifyContent="space-between"
         >
             <Text fontSize="16">{date}</Text>
             <Button

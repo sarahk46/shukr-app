@@ -1,10 +1,10 @@
 import { Text, Input, ScrollView, Button } from 'native-base';
-import HadithCard from './HadithCard';
-import styles from './styles';
-import ScreenWrapper from './ScreenWrapper';
-import TopBar from './TopBar';
+import HadithCard from '../Components/HadithCard';
+import styles from '../styles';
+import ScreenWrapper from '../ScreenWrapper';
+import TopBar from '../Components/TopBar';
 import React, { useState } from 'react';
-import getCurrentDate from './helpers';
+import getCurrentDate from '../helpers';
 
 function WriteEntryQ1({ navigation }) {
     // iniitalize question 1 response

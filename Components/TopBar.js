@@ -1,6 +1,6 @@
 import { Text, Button, ChevronLeftIcon, CloseIcon, View } from 'native-base';
 import React from 'react';
-import styles from './styles';
+import styles from '../styles';
 
 // with back and esc
 function TopBar({ navigation, backTo, exit, date }) {

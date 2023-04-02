@@ -1,5 +1,5 @@
 import { Box, Text, Button, } from 'native-base';
-import styles from './styles';
+import styles from '../styles';
 
 function ReflectNowButton(navigation) {
     return (

@@ -1,11 +1,11 @@
 import { Text, Input, ScrollView, Button, Modal } from 'native-base';
-import HadithCard from './HadithCard';
-import styles from './styles';
-import ScreenWrapper from './ScreenWrapper';
-import TopBar from './TopBar';
+import HadithCard from '../Components/HadithCard';
+import styles from '../styles';
+import ScreenWrapper from '../ScreenWrapper';
+import TopBar from '../Components/TopBar';
 import React, { useContext, useState } from 'react';
-import JournalContext from './JournalContext';
-import getCurrentDate from './helpers'
+import JournalContext from '../JournalContext';
+import getCurrentDate from '../helpers'
 
 function WriteEntryQ3({ navigation, route }) {
   const { journalEntries, setJournalEntries } = useContext(JournalContext);

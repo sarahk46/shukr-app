@@ -1,14 +1,14 @@
 // Screen Stack navigators
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
-import Home from './Home.js';
-import Journal from './Journal.js';
+import Home from './Screens/Home.js';
+import Journal from './Screens/Journal.js';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import ViewEntry from './ViewEntry.js';
-import WriteEntryPause from './WriteEntryPause.js';
-import WriteEntryQ1 from './WriteEntryQ1.js';
-import WriteEntryQ2 from './WriteEntryQ2.js';
-import WriteEntryQ3 from './WriteEntryQ3.js';
+import ViewEntry from './Screens/ViewEntry.js';
+import WriteEntryPause from './Screens/WriteEntryPause.js';
+import WriteEntryQ1 from './Screens/WriteEntryQ1.js';
+import WriteEntryQ2 from './Screens/WriteEntryQ2.js';
+import WriteEntryQ3 from './Screens/WriteEntryQ3.js';
 
 const JournalStack = createStackNavigator();
 function JournalStackScreen() {

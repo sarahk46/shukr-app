@@ -32,6 +32,8 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     paddingVertical: 20,
     paddingHorizontal: 16,
+    alignItems: 'center',
+    // shadow
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -40,7 +42,6 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 4,
     elevation: 5,
-    alignItems: 'center',
   },
   centerContainer: {
     flex: 1,
@@ -191,12 +192,12 @@ const styles = StyleSheet.create({
   floatBottomRight: {
     position: 'absolute',
     bottom: 20,
-    right: 20,
+    right: 10,
   },
   floatBottomLeft: {
     position: 'absolute',
     bottom: 20,
-    left: 20,
+    left: 10,
   }
 });
 
