@@ -1,15 +1,14 @@
 import { Text, View, ScrollView } from 'native-base';
-import {Image} from 'react-native';
+import { Image } from 'react-native';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import HadithCard from './HadithCard';
-import ScreenWrapper from './ScreenWrapper';
+import HadithCard from '../Components/HadithCard';
+import ScreenWrapper from '../ScreenWrapper';
 
 // TODO: Figure out redirection w/ "Reflect Now" to WriteEntry page
 // NavigationContainer should be a part of the solution -- read more here: 
 // https://reactnavigation.org/docs/navigating
 // The packages for this are installed btw here
-
 
 const fetchHadiths = async (hadithUrls) => {
   const hadiths = [];
@@ -23,11 +22,11 @@ const fetchHadiths = async (hadithUrls) => {
 };
 
 function displayComingSoon() {
-  return(
+  return (
     <View alignItems="center" marginTop="30">
-      <Image source={require('./LoadingWidgets.png')}/>
-        <Text bold fontSize="14">Coming Soon!</Text>
-        <Text>More widgets to come soon!</Text>
+      <Image source={require('../LoadingWidgets.png')} />
+      <Text bold fontSize="14">Coming Soon!</Text>
+      <Text>More widgets to come soon!</Text>
     </View>
   );
 }
@@ -48,7 +47,7 @@ function Home({ navigation }) {
   return (
     <ScreenWrapper>
       <ScrollView>
-        <HadithCard isHomeCard={true} navigation={navigation}/>
+        <HadithCard isHomeCard={true} navigation={navigation} />
         {displayComingSoon()}
       </ScrollView>
     </ScreenWrapper>
