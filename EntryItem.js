@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ListItem, Divider } from '@rneui/themed';
 import styles from './styles';  // Need to eventually do some styling
-import HadithCard from './HadithCard';
+import HadithCard from './Components/HadithCard';
 
 // TODO: Before release, would also have to accept
 // data related to each entry in order to display correct info
