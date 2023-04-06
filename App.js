@@ -24,7 +24,7 @@ function App() {
   return (
     <NativeBaseProvider>
       <JournalContext.Provider value={{ journalEntries, setJournalEntries }}>
-        <ImageBackground source={require('./v1BackgroundImage.png')} style={styles.backgroundImage}>
+        <ImageBackground source={require('.')} style={styles.backgroundImage}>
           <NavigationContainer theme={navTheme}>
             <TabNavigator />
           </NavigationContainer>
