@@ -1,7 +1,7 @@
 import { Box, Text, Button, } from 'native-base';
 import styles from '../styles';
 
-function ReflectNowButton(navigation) {
+function ReflectNowButton({ navigation }) {
     return (
         <Button style={styles.button} variant="solid" _text={{ color: "#3D405B" }}
             // If get done with this, need to see how to pass in hadith data
