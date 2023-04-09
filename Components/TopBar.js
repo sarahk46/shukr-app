@@ -4,25 +4,25 @@ import styles from '../styles';
 
 // with back and esc
 function TopBar({ navigation, backTo, exit, date }) {
-  return (
-    <View style={styles.topBar}>
-      <Button
-        startIcon={<ChevronLeftIcon />}
-        _icon={{ color: 'black' }}
-        style={styles.iconButton}
-        onPress={() => navigation.navigate(backTo)}
-      />
+    return (
+        <View style={styles.topBar}>
+            <Button
+                startIcon={<ChevronLeftIcon />}
+                _icon={{ color: "black" }}
+                style={styles.iconButton}
+                onPress={() => navigation.navigate(backTo)}
+            />
 
-      <Text fontSize="16">{date}</Text>
+            <Text fontSize="16">{date}</Text>
 
-      <Button
-        startIcon={<CloseIcon />}
-        _icon={{ color: 'black' }}
-        style={styles.iconButton}
-        onPress={() => navigation.navigate(exit)}
-      />
-    </View>
-  );
+            <Button
+                startIcon={<CloseIcon />}
+                _icon={{ color: "black" }}
+                style={styles.iconButton}
+                onPress={() => navigation.navigate(exit)}
+            />
+        </View>
+    );
 }
 
 export default TopBar;
