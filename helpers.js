@@ -7,7 +7,7 @@ export default getCurrentDate = (includeYear) => {
   if (includeYear) {
     options.year = 'numeric';
   }
-  
+
   const formattedDate = new Intl.DateTimeFormat('en', options).format(date);
   return formattedDate;
 };
