@@ -6,7 +6,7 @@ import HadithCard from '../Components/HadithCard';
 import ScreenWrapper from '../ScreenWrapper';
 
 // TODO: Figure out redirection w/ "Reflect Now" to WriteEntry page
-// NavigationContainer should be a part of the solution -- read more here: 
+// NavigationContainer should be a part of the solution -- read more here:
 // https://reactnavigation.org/docs/navigating
 // The packages for this are installed btw here
 
@@ -25,7 +25,9 @@ function displayComingSoon() {
   return (
     <View alignItems="center" marginTop="30">
       <Image source={require('../LoadingWidgets.png')} />
-      <Text bold fontSize="14">Coming Soon!</Text>
+      <Text bold fontSize="14">
+        Coming Soon!
+      </Text>
       <Text>More widgets to come soon!</Text>
     </View>
   );
@@ -33,15 +35,15 @@ function displayComingSoon() {
 
 function Home({ navigation }) {
   const hadithUrls = [
-    "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-abudawud/2774.min.json",
+    'https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-abudawud/2774.min.json',
   ];
 
   const [hadiths, setHadiths] = useState([]);
 
   useEffect(() => {
     fetchHadiths(hadithUrls)
-      .then(hadiths => setHadiths(hadiths))
-      .catch(error => console.log(error));
+      .then((hadiths) => setHadiths(hadiths))
+      .catch((error) => console.log(error));
   }, []);
 
   return (
