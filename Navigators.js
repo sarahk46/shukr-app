@@ -9,6 +9,7 @@ import WriteEntryPause from './Screens/WriteEntryPause.js';
 import WriteEntryQ1 from './Screens/WriteEntryQ1.js';
 import WriteEntryQ2 from './Screens/WriteEntryQ2.js';
 import WriteEntryQ3 from './Screens/WriteEntryQ3.js';
+import LoginScreen from './Screens/LoginScreen';
 
 const JournalStack = createStackNavigator();
 function JournalStackScreen() {
@@ -30,9 +31,15 @@ function JournalStackScreen() {
 
 const HomeStack = createStackNavigator();
 function HomeStackScreen() {
+  const initialScreen = 'Login Page';
   return (
-    <HomeStack.Navigator>
+    <HomeStack.Navigator initialRouteName={initialScreen}>
       <HomeStack.Screen name="Home Page" component={Home}
+        options={{
+          header: ({ navigation }) => null // This will hide the header, but you can also pass in a custom header component that receives the navigation prop
+        }}
+      />
+      <HomeStack.Screen name="Login Page" component={LoginScreen}
         options={{
           header: ({ navigation }) => null // This will hide the header, but you can also pass in a custom header component that receives the navigation prop
         }}
