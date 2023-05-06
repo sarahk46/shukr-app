@@ -16,6 +16,7 @@ function WriteEntryQ3({ navigation, route }) {
     const entry = { ...route.params.responses, question3: response, date: getCurrentDate() };
     setJournalEntries([...journalEntries, entry]);
     setIsModalOpen(true);
+    // comment
   };
 
   const handleCloseModal = () => {
