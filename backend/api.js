@@ -14,10 +14,7 @@ const pool = new pg.Pool({
   }
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
-});
+app.listen(process.env.PORT || 3000);
 
 app.get('/hadith/today', (req, res) => {
   pool.query('SELECT * FROM hadithlist WHERE released_already IS FALSE ORDER BY RANDOM() LIMIT 1', (err, result) => {
