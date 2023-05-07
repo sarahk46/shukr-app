@@ -17,7 +17,7 @@ const pool = new pg.Pool({
 app.get('/hadith/today', (req, res) => {
   pool.query('SELECT * FROM hadithlist WHERE released_already IS FALSE ORDER BY RANDOM() LIMIT 1', (err, result) => {
     if (err) {
-      throw err;
+      res.status(500).send('Internal server error');
     }
     res.send(result.rows);
   });
