@@ -28,4 +28,6 @@ app.get('/hadith/today', (req, res) => {
   });
 });
 
+const app = express();
+
 
