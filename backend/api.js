@@ -13,8 +13,10 @@ const pool = new pg.Pool({
     rejectUnauthorized: false
   }
 });
+app.use(express.static("public"));
+app.listen(process.env.PORT || 3000,
+	() => console.log("Server is running..."));
 
-app.listen(process.env.PORT);
 
 app.get('/hadith/today', (req, res) => {
   pool.query('SELECT * FROM hadithlist WHERE released_already IS FALSE ORDER BY RANDOM() LIMIT 1', (err, result) => {
