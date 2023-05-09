@@ -14,7 +14,7 @@ const pool = new pg.Pool({
   }
 });
 app.use(express.static("public"));
-app.listen(process.env.PORT || 3000,
+app.listen(19000,
 	() => console.log("Server is running..."));
 
 
