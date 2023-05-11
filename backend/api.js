@@ -8,8 +8,13 @@ app.use(cors());
 
 //connecting to heroku database
 const pool = new pg.Pool({
+<<<<<<< HEAD
   connectionString: "postgres://taonknyscfdcbt:8d2638d1e2373a9ee7e1cbdb2afa5bd3d27256e75c4647fef7c8e4a82f314b28@ec2-35-169-9-79.compute-1.amazonaws.com:5432/d7r31vn4qfsn53",
   port: 19000,
+=======
+  connectionString: "postgres://rhwmwytrjijkpk:baba63004d40592a5ad62d722b3e47fa91e628f40738380bff9fedf398e21aff@ec2-35-172-26-41.compute-1.amazonaws.com:5432/d4gmqi8p3vrjd7",
+  port: 19000
+>>>>>>> 15637bc (connection string)
   ssl: {
     rejectUnauthorized: false
   }
